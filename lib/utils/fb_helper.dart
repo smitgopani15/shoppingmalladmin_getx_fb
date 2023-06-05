@@ -1,5 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:google_sign_in/google_sign_in.dart';
 
 class FbHelper {
   static FbHelper fbHelper = FbHelper._();
@@ -7,57 +7,18 @@ class FbHelper {
   FbHelper._();
 
   FirebaseAuth firebaseAuth = FirebaseAuth.instance;
-
-  GoogleSignInAuthentication? googleSignInAuthentication;
-
-  Future<String?> signUp({
-    required email,
-    required password,
-  }) async {
-    String? msg;
-    var credential = await firebaseAuth
-        .createUserWithEmailAndPassword(
-          email: email,
-          password: password,
-        )
-        .then(
-          (value) => msg = "account successfully created !",
-        )
-        .catchError(
-          (e) => msg = "account creation failed !",
-        );
-    return msg;
-  }
+  FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
 
   Future<String?> signIn({
     required email,
     required password,
   }) async {
     String? msg;
-    var credential = await firebaseAuth
+    await firebaseAuth
         .signInWithEmailAndPassword(
           email: email,
           password: password,
         )
-        .then(
-          (value) => msg = "login successfully !",
-        )
-        .catchError(
-          (e) => msg = "login failed !",
-        );
-    return msg;
-  }
-
-  Future<String?> googleSignIn() async {
-    String? msg;
-    GoogleSignInAccount? user = await GoogleSignIn().signIn();
-    googleSignInAuthentication = await user!.authentication;
-    var crd = GoogleAuthProvider.credential(
-      accessToken: googleSignInAuthentication!.accessToken,
-      idToken: googleSignInAuthentication!.idToken,
-    );
-    await firebaseAuth
-        .signInWithCredential(crd)
         .then(
           (value) => msg = "login successfully !",
         )
@@ -74,5 +35,78 @@ class FbHelper {
 
   Future<void> signOut() async {
     await firebaseAuth.signOut();
+  }
+
+  Future<void> insertItem({
+    name,
+    price,
+    description,
+    offer,
+    category,
+    // image,
+  }) async {
+    User? user = firebaseAuth.currentUser;
+    String uid = user!.uid;
+    await firebaseFirestore
+        .collection("admin")
+        .doc(uid)
+        .collection("item")
+        .add({
+      "name": name,
+      "price": price,
+      "description": description,
+      "offer": offer,
+      "category": category,
+      // "image": image,
+    });
+  }
+
+  Stream<QuerySnapshot<Map<String, dynamic>>> readItem() {
+    User? user = firebaseAuth.currentUser;
+    var uid = user!.uid;
+    return firebaseFirestore
+        .collection("admin")
+        .doc(uid)
+        .collection("item")
+        .snapshots();
+  }
+
+  void updateItem({
+    name,
+    price,
+    description,
+    offer,
+    category,
+    // image,
+    id,
+  }) {
+    User? user = firebaseAuth.currentUser;
+    var uid = user!.uid;
+    firebaseFirestore
+        .collection("admin")
+        .doc(uid)
+        .collection("item")
+        .doc(id)
+        .set({
+      "name": name,
+      "price": price,
+      "description": description,
+      "offer": offer,
+      "category": category,
+      // "image": image,
+    });
+  }
+
+  void deleteItem({
+    id,
+  }) {
+    User? user = firebaseAuth.currentUser;
+    var uid = user!.uid;
+    firebaseFirestore
+        .collection("admin")
+        .doc(uid)
+        .collection("item")
+        .doc(id)
+        .delete();
   }
 }
