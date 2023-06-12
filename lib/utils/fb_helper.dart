@@ -43,7 +43,7 @@ class FbHelper {
     description,
     offer,
     category,
-    // image,
+    image,
   }) async {
     User? user = firebaseAuth.currentUser;
     String uid = user!.uid;
@@ -57,7 +57,7 @@ class FbHelper {
       "description": description,
       "offer": offer,
       "category": category,
-      // "image": image,
+      "image": image,
     });
   }
 
@@ -77,7 +77,7 @@ class FbHelper {
     description,
     offer,
     category,
-    // image,
+    image,
     id,
   }) {
     User? user = firebaseAuth.currentUser;
@@ -93,7 +93,7 @@ class FbHelper {
       "description": description,
       "offer": offer,
       "category": category,
-      // "image": image,
+      "image": image,
     });
   }
 

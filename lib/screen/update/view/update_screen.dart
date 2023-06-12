@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -22,6 +23,7 @@ class _UpdateScreenState extends State<UpdateScreen> {
   var price;
   var id;
   var imagePath;
+  var image;
 
   @override
   void initState() {
@@ -31,6 +33,7 @@ class _UpdateScreenState extends State<UpdateScreen> {
     description = homeController.dataList[0].description;
     offer = homeController.dataList[0].offer;
     price = homeController.dataList[0].price;
+    image = homeController.dataList[0].image;
   }
 
   @override
@@ -489,53 +492,59 @@ class _UpdateScreenState extends State<UpdateScreen> {
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(10),
                   ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      imagePath == null
-                          ? Image.asset(
-                              "assets/images/2.png",
-                              height: 150,
-                              width: 150,
-                            )
-                          : Image.file(imagePath),
-                      SizedBox(
-                        height: 25,
-                      ),
-                      InkWell(
-                        onTap: () async {
-                          ImagePicker imagePicker = ImagePicker();
-                          XFile? xFile = await imagePicker.pickImage(
-                            source: ImageSource.gallery,
-                          );
-                          setState(() {
-                            imagePath = xFile!.path;
-                          });
-                        },
-                        child: Container(
-                          height: 50,
-                          width: 220,
-                          decoration: BoxDecoration(
-                            color: Colors.black,
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          alignment: Alignment.center,
-                          child: Padding(
-                            padding: EdgeInsets.only(
-                              top: 1,
+                  child: Obx(
+                    () => Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        homeController.uImagePath.value.isEmpty
+                            ? Image.file(
+                                File(image),
+                                height: 150,
+                                width: 150,
+                              )
+                            : Image.file(
+                                File(
+                                  homeController.uImagePath.value,
+                                ),
+                                height: 150,
+                                width: 150,
+                              ),
+                        SizedBox(
+                          height: 25,
+                        ),
+                        InkWell(
+                          onTap: () async {
+                            ImagePicker imagePicker = ImagePicker();
+                            XFile? xFile = await imagePicker.pickImage(
+                              source: ImageSource.gallery,
+                            );
+                            homeController.uImagePath.value = xFile!.path;
+                          },
+                          child: Container(
+                            height: 50,
+                            width: 220,
+                            decoration: BoxDecoration(
+                              color: Colors.black,
+                              borderRadius: BorderRadius.circular(10),
                             ),
-                            child: Text(
-                              "Update Image",
-                              style: GoogleFonts.secularOne(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 16,
-                                color: Colors.white,
+                            alignment: Alignment.center,
+                            child: Padding(
+                              padding: EdgeInsets.only(
+                                top: 1,
+                              ),
+                              child: Text(
+                                "Update Image",
+                                style: GoogleFonts.secularOne(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16,
+                                  color: Colors.white,
+                                ),
                               ),
                             ),
                           ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
                 SizedBox(
@@ -550,7 +559,7 @@ class _UpdateScreenState extends State<UpdateScreen> {
                       description: descriptionc.text,
                       offer: offerc.text,
                       category: homeController.selectedUCategory.value,
-                      // image: imagePath,
+                      image: homeController.uImagePath.value,
                     );
                     Get.back();
                   },

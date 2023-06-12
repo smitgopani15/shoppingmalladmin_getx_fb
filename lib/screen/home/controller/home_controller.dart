@@ -31,4 +31,12 @@ class HomeController extends GetxController {
     "Scanners",
     "Other",
   ].obs;
+
+  RxString imagePath = "".obs;
+
+  RxString uImagePath = "".obs;
+
+  void resetImage() {
+    imagePath.value = "";
+  }
 }

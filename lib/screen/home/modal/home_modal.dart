@@ -1,7 +1,5 @@
 class HomeModal {
-  String? name, price, description, offer, category, id;
-
-  // image
+  String? name, price, description, offer, category, id, image;
 
   HomeModal({
     this.name,
@@ -10,14 +8,12 @@ class HomeModal {
     this.offer,
     this.category,
     this.id,
-    // this.image,
+    this.image,
   });
 }
 
 class UpdateModal {
-  String? name, price, description, offer, category, id;
-
-  // image
+  String? name, price, description, offer, category, id, image;
 
   UpdateModal({
     this.name,
@@ -26,6 +22,6 @@ class UpdateModal {
     this.offer,
     this.category,
     this.id,
-    // this.image,
+    this.image,
   });
 }

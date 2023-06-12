@@ -1,3 +1,6 @@
+import 'dart:convert';
+import 'dart:io';
+import 'dart:io' as Io;
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -16,7 +19,6 @@ class _InsertScreenState extends State<InsertScreen> {
   HomeController homeController = Get.put(
     HomeController(),
   );
-  var imagePath;
   TextEditingController namec = TextEditingController();
   TextEditingController pricec = TextEditingController();
   TextEditingController descriptionc = TextEditingController();
@@ -473,53 +475,57 @@ class _InsertScreenState extends State<InsertScreen> {
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(10),
                   ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      imagePath == null
-                          ? Image.asset(
-                              "assets/images/2.png",
-                              height: 150,
-                              width: 150,
-                            )
-                          : Image.file(imagePath),
-                      SizedBox(
-                        height: 25,
-                      ),
-                      InkWell(
-                        onTap: () async {
-                          ImagePicker imagePicker = ImagePicker();
-                          XFile? xFile = await imagePicker.pickImage(
-                            source: ImageSource.gallery,
-                          );
-                          setState(() {
-                            imagePath = xFile!.path;
-                          });
-                        },
-                        child: Container(
-                          height: 50,
-                          width: 220,
-                          decoration: BoxDecoration(
-                            color: Colors.black,
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          alignment: Alignment.center,
-                          child: Padding(
-                            padding: EdgeInsets.only(
-                              top: 1,
+                  child: Obx(
+                    () => Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        homeController.imagePath.value.isEmpty
+                            ? Image.asset(
+                                "assets/images/2.png",
+                                height: 150,
+                                width: 150,
+                              )
+                            : Image.file(
+                                File(homeController.imagePath.value),
+                                height: 150,
+                                width: 150,
+                              ),
+                        SizedBox(
+                          height: 25,
+                        ),
+                        InkWell(
+                          onTap: () async {
+                            ImagePicker imagePicker = ImagePicker();
+                            XFile? xFile = await imagePicker.pickImage(
+                              source: ImageSource.gallery,
+                            );
+                            homeController.imagePath.value = xFile!.path;
+                          },
+                          child: Container(
+                            height: 50,
+                            width: 220,
+                            decoration: BoxDecoration(
+                              color: Colors.black,
+                              borderRadius: BorderRadius.circular(10),
                             ),
-                            child: Text(
-                              "Choose Image",
-                              style: GoogleFonts.secularOne(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 16,
-                                color: Colors.white,
+                            alignment: Alignment.center,
+                            child: Padding(
+                              padding: EdgeInsets.only(
+                                top: 1,
+                              ),
+                              child: Text(
+                                "Choose Image",
+                                style: GoogleFonts.secularOne(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16,
+                                  color: Colors.white,
+                                ),
                               ),
                             ),
                           ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
                 SizedBox(
@@ -533,7 +539,7 @@ class _InsertScreenState extends State<InsertScreen> {
                       description: descriptionc.text,
                       offer: offerc.text,
                       category: homeController.selectedICategory.value,
-                      // image: imagePath,
+                      image: homeController.imagePath.value,
                     );
                     Get.back();
                   },

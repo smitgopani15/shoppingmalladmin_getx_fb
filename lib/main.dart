@@ -43,5 +43,6 @@ Future<void> main() async {
 }
 
 // validation
-// image picker with controller
 // category reset
+// image reset
+// ui change

@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -111,6 +113,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       String description = data['description'];
                       String offer = data['offer'];
                       String category = data['category'];
+                      String? image = data['image'];
                       HomeModal homeModal = HomeModal(
                         name: name,
                         price: price,
@@ -118,6 +121,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         offer: offer,
                         description: description,
                         id: x.id,
+                        image: image,
                       );
                       dataList.add(homeModal);
                     }
@@ -139,6 +143,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               var category = dataList[index].category;
                               var price = dataList[index].price;
                               var offer = dataList[index].offer;
+                              var image = dataList[index].image;
                               UpdateModal updateModal = UpdateModal(
                                 id: id,
                                 description: description,
@@ -146,6 +151,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 category: category,
                                 price: price,
                                 name: name,
+                                image: image,
                               );
                               homeController.dataList.add(updateModal);
                               homeController.selectedUCategory.value =
@@ -159,6 +165,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               );
                             },
                             onLongPress: () {
+                              homeController.resetImage();
                               Get.toNamed('insert_screen');
                             },
                             child: Container(
@@ -181,7 +188,19 @@ class _HomeScreenState extends State<HomeScreen> {
                                       height: 100,
                                       width: 100,
                                       alignment: Alignment.center,
-                                      child: Image.asset("assets/images/2.png"),
+                                      child: dataList[index].image == null
+                                          ? Image.asset(
+                                              "assets/images/2.png",
+                                              height: 150,
+                                              width: 150,
+                                            )
+                                          : Image.file(
+                                              File(
+                                                "${dataList[index].image}",
+                                              ),
+                                              height: 150,
+                                              width: 150,
+                                            ),
                                     ),
                                     SizedBox(
                                       width: 15,
