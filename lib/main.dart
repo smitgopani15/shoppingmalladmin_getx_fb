@@ -43,5 +43,4 @@ Future<void> main() async {
 }
 
 // validation
-// by-default asset image condition
 // update image
