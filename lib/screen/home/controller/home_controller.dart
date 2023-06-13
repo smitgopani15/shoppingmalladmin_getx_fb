@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'dart:io';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import '../modal/home_modal.dart';
 
@@ -39,19 +40,21 @@ class HomeController extends GetxController {
     "Other",
   ].obs;
 
-  RxString iImagePath = "".obs;
+  RxString iImagePath = "empty".obs;
+
+  RxString iDefaultImagePath = "".obs;
 
   RxString uImagePath = "".obs;
 
   void resetIImage() {
-    iImagePath.value = "";
+    iImagePath.value = "empty";
   }
 
   void resetUImage() {
     uImagePath.value = "";
   }
 
-  String convertImageToBase64String(String image) {
+  String convertFileImageToBase64String(String image) {
     File imageFile = File(image);
     List<int> imageBytes = imageFile.readAsBytesSync();
     String base64String = base64Encode(imageBytes);

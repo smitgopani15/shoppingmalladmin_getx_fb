@@ -543,8 +543,8 @@ class _UpdateScreenState extends State<UpdateScreen> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               homeController.uImagePath.value.isEmpty
-                                  ? Image.memory(
-                                      base64Decode(image),
+                                  ? Image.asset(
+                                      "assets/images/2.png",
                                       height: 150,
                                       width: 150,
                                     )
@@ -565,8 +565,10 @@ class _UpdateScreenState extends State<UpdateScreen> {
                                     source: ImageSource.gallery,
                                   );
                                   homeController.uImagePath.value =
-                                      homeController.convertImageToBase64String(
-                                          xFile!.path);
+                                      homeController
+                                          .convertFileImageToBase64String(
+                                    xFile!.path,
+                                  );
                                 },
                                 child: Container(
                                   height: 50,

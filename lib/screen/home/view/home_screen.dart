@@ -37,7 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     alignment: Alignment.center,
                     child: Icon(
                       Icons.shopping_bag,
-                      color: Color(0xffd7a5d3),
+                      color: Colors.teal,
                       size: 40,
                     ),
                   ),
@@ -58,7 +58,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               style: GoogleFonts.secularOne(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 22,
-                                color: Color(0xffd7a5d3),
+                                color: Colors.teal,
                                 letterSpacing: 1,
                               ),
                             ),
@@ -82,7 +82,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         alignment: Alignment.center,
                         child: Icon(
                           Icons.logout,
-                          color: Color(0xffd7a5d3),
+                          color: Colors.teal,
                           size: 25,
                         ),
                       ),
@@ -107,7 +107,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       String description = data['description'];
                       String offer = data['offer'];
                       String category = data['category'];
-                      String image = data['image'];
+                      String? image = data['image'];
                       HomeModal homeModal = HomeModal(
                         name: name,
                         price: price,
@@ -183,7 +183,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     height: 150,
                                     width: double.infinity,
                                     decoration: BoxDecoration(
-                                      color: Color(0xffd7a5d3),
+                                      color: Colors.teal,
                                       borderRadius: BorderRadius.circular(10),
                                     ),
                                     child: Padding(

@@ -519,11 +519,11 @@ class _InsertScreenState extends State<InsertScreen> {
                           color: Color(0xffd7a5d3),
                           borderRadius: BorderRadius.circular(10),
                         ),
-                        child: Obx(
-                          () => Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              homeController.iImagePath.value.isEmpty
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Obx(
+                              () => homeController.iImagePath.value == "empty"
                                   ? Image.asset(
                                       "assets/images/2.png",
                                       height: 150,
@@ -531,62 +531,66 @@ class _InsertScreenState extends State<InsertScreen> {
                                     )
                                   : Image.memory(
                                       base64Decode(
-                                          homeController.iImagePath.value),
+                                        homeController.iImagePath.value,
+                                      ),
                                       height: 150,
                                       width: 150,
                                     ),
-                              SizedBox(
-                                height: 25,
-                              ),
-                              InkWell(
-                                onTap: () async {
-                                  ImagePicker imagePicker = ImagePicker();
-                                  XFile? xFile = await imagePicker.pickImage(
-                                    source: ImageSource.gallery,
-                                  );
-                                  homeController.iImagePath.value =
-                                      homeController.convertImageToBase64String(
-                                          xFile!.path);
-                                },
-                                child: Container(
-                                  height: 50,
-                                  width: 220,
-                                  decoration: BoxDecoration(
-                                    color: Color(0xfffef2fe),
-                                    borderRadius: BorderRadius.circular(10),
+                            ),
+                            SizedBox(
+                              height: 25,
+                            ),
+                            InkWell(
+                              onTap: () async {
+                                ImagePicker imagePicker = ImagePicker();
+                                XFile? xFile = await imagePicker.pickImage(
+                                  source: ImageSource.gallery,
+                                );
+                                homeController.iImagePath.value = homeController
+                                    .convertFileImageToBase64String(
+                                  xFile!.path,
+                                );
+                              },
+                              child: Container(
+                                height: 50,
+                                width: 220,
+                                decoration: BoxDecoration(
+                                  color: Color(0xfffef2fe),
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                alignment: Alignment.center,
+                                child: Padding(
+                                  padding: EdgeInsets.only(
+                                    top: 1,
                                   ),
-                                  alignment: Alignment.center,
-                                  child: Padding(
-                                    padding: EdgeInsets.only(
-                                      top: 1,
-                                    ),
-                                    child: Text(
-                                      "Choose Image",
-                                      style: GoogleFonts.secularOne(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 16,
-                                        color: Color(0xffd7a5d3),
-                                      ),
+                                  child: Text(
+                                    "Choose Image",
+                                    style: GoogleFonts.secularOne(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 16,
+                                      color: Color(0xffd7a5d3),
                                     ),
                                   ),
                                 ),
                               ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
                       ),
                       SizedBox(
                         height: 30,
                       ),
                       InkWell(
-                        onTap: () {
+                        onTap: () async {
                           FbHelper.fbHelper.insertItem(
                             name: namec.text,
                             price: pricec.text,
                             description: descriptionc.text,
                             offer: offerc.text,
                             category: homeController.selectedICategory.value,
-                            image: homeController.iImagePath.value,
+                            image: homeController.iImagePath.value == "empty"
+                                ? null
+                                : homeController.iImagePath.value,
                           );
                           Get.back();
                           homeController.resetICategory();

@@ -30,7 +30,7 @@ class _SigninScreenState extends State<SigninScreen> {
                 style: GoogleFonts.secularOne(
                   fontWeight: FontWeight.w500,
                   fontSize: 14,
-                  color: Color(0xffd7a5d3),
+                  color: Colors.teal,
                 ),
               ),
             ),
@@ -54,7 +54,7 @@ class _SigninScreenState extends State<SigninScreen> {
                     height: 65,
                     width: double.infinity,
                     decoration: BoxDecoration(
-                      color: Color(0xffd7a5d3),
+                      color: Colors.teal,
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: Padding(
@@ -116,7 +116,7 @@ class _SigninScreenState extends State<SigninScreen> {
                     height: 65,
                     width: double.infinity,
                     decoration: BoxDecoration(
-                      color: Color(0xffd7a5d3),
+                      color: Colors.teal,
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: Padding(
@@ -183,14 +183,13 @@ class _SigninScreenState extends State<SigninScreen> {
                         style: GoogleFonts.secularOne(
                           fontWeight: FontWeight.bold,
                           fontSize: 28,
-                          color: Color(0xffd7a5d3),
+                          color: Colors.teal,
                         ),
                       ),
                       CircleAvatar(
                         radius: 30,
-                        backgroundColor: Color(0xffd7a5d3),
+                        backgroundColor: Colors.teal,
                         child: IconButton(
-                          color: Colors.black,
                           onPressed: () async {
                             String? msg = await FbHelper.fbHelper.signIn(
                               email: emailc.text,
