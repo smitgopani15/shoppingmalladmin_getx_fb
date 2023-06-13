@@ -1,8 +1,11 @@
+import 'dart:convert';
+import 'dart:io';
 import 'package:get/get.dart';
 import '../modal/home_modal.dart';
 
 class HomeController extends GetxController {
   var selectedICategory = "Other".obs;
+  var resetSelectedICategory = "Other".obs;
   RxList<String> iCategoryList = <String>[
     "Mobiles",
     "Wearables",
@@ -15,6 +18,10 @@ class HomeController extends GetxController {
     "Scanners",
     "Other",
   ].obs;
+
+  void resetICategory() {
+    selectedICategory.value = resetSelectedICategory.value;
+  }
 
   List<UpdateModal> dataList = <UpdateModal>[];
 
@@ -32,11 +39,22 @@ class HomeController extends GetxController {
     "Other",
   ].obs;
 
-  RxString imagePath = "".obs;
+  RxString iImagePath = "".obs;
 
   RxString uImagePath = "".obs;
 
-  void resetImage() {
-    imagePath.value = "";
+  void resetIImage() {
+    iImagePath.value = "";
+  }
+
+  void resetUImage() {
+    uImagePath.value = "";
+  }
+
+  String convertImageToBase64String(String image) {
+    File imageFile = File(image);
+    List<int> imageBytes = imageFile.readAsBytesSync();
+    String base64String = base64Encode(imageBytes);
+    return base64String;
   }
 }

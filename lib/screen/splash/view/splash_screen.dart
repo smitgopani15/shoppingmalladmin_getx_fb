@@ -30,7 +30,7 @@ class _SplashScreenState extends State<SplashScreen> {
     );
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.black,
+        backgroundColor: Color(0xfffef2fe),
         body: Stack(
           children: [
             Align(
@@ -42,7 +42,7 @@ class _SplashScreenState extends State<SplashScreen> {
                   style: GoogleFonts.secularOne(
                     fontWeight: FontWeight.w500,
                     fontSize: 14,
-                    color: Colors.white,
+                    color: Color(0xffd7a5d3),
                   ),
                 ),
               ),
@@ -53,7 +53,7 @@ class _SplashScreenState extends State<SplashScreen> {
                 children: [
                   Icon(
                     Icons.shopping_bag,
-                    color: Colors.white,
+                    color: Color(0xffd7a5d3),
                     size: 160,
                   ),
                   Text(
@@ -61,7 +61,7 @@ class _SplashScreenState extends State<SplashScreen> {
                     style: GoogleFonts.secularOne(
                       fontWeight: FontWeight.bold,
                       fontSize: 22,
-                      color: Colors.white,
+                      color: Color(0xffd7a5d3),
                       letterSpacing: 1,
                     ),
                   ),

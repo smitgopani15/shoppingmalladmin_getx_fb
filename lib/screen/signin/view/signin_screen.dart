@@ -18,7 +18,7 @@ class _SigninScreenState extends State<SigninScreen> {
 
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Color(0xfffef2fe),
       body: Stack(
         children: [
           Align(
@@ -30,7 +30,7 @@ class _SigninScreenState extends State<SigninScreen> {
                 style: GoogleFonts.secularOne(
                   fontWeight: FontWeight.w500,
                   fontSize: 14,
-                  color: Colors.white,
+                  color: Color(0xffd7a5d3),
                 ),
               ),
             ),
@@ -54,7 +54,7 @@ class _SigninScreenState extends State<SigninScreen> {
                     height: 65,
                     width: double.infinity,
                     decoration: BoxDecoration(
-                      color: Colors.white,
+                      color: Color(0xffd7a5d3),
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: Padding(
@@ -68,7 +68,7 @@ class _SigninScreenState extends State<SigninScreen> {
                         children: [
                           Icon(
                             Icons.email,
-                            color: Colors.black,
+                            color: Color(0xfffef2fe),
                             size: 30,
                           ),
                           SizedBox(
@@ -81,7 +81,7 @@ class _SigninScreenState extends State<SigninScreen> {
                             child: Container(
                               height: double.infinity,
                               width: 3,
-                              color: Colors.black,
+                              color: Color(0xfffef2fe),
                             ),
                           ),
                           SizedBox(
@@ -90,15 +90,15 @@ class _SigninScreenState extends State<SigninScreen> {
                           Expanded(
                             child: TextField(
                               controller: emailc,
-                              cursorColor: Colors.black,
+                              cursorColor: Color(0xfffef2fe),
                               style: GoogleFonts.secularOne(
-                                color: Colors.black,
+                                color: Color(0xfffef2fe),
                                 fontWeight: FontWeight.w500,
                               ),
                               decoration: InputDecoration(
                                 hintText: "Email",
                                 hintStyle: GoogleFonts.secularOne(
-                                  color: Colors.black,
+                                  color: Color(0xfffef2fe),
                                   fontWeight: FontWeight.w500,
                                 ),
                                 border: InputBorder.none,
@@ -116,7 +116,7 @@ class _SigninScreenState extends State<SigninScreen> {
                     height: 65,
                     width: double.infinity,
                     decoration: BoxDecoration(
-                      color: Colors.white,
+                      color: Color(0xffd7a5d3),
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: Padding(
@@ -130,7 +130,7 @@ class _SigninScreenState extends State<SigninScreen> {
                         children: [
                           Icon(
                             Icons.lock,
-                            color: Colors.black,
+                            color: Color(0xfffef2fe),
                             size: 30,
                           ),
                           SizedBox(
@@ -143,7 +143,7 @@ class _SigninScreenState extends State<SigninScreen> {
                             child: Container(
                               height: double.infinity,
                               width: 3,
-                              color: Colors.black,
+                              color: Color(0xfffef2fe),
                             ),
                           ),
                           SizedBox(
@@ -153,15 +153,15 @@ class _SigninScreenState extends State<SigninScreen> {
                             child: TextField(
                               controller: passwordc,
                               obscureText: true,
-                              cursorColor: Colors.black,
+                              cursorColor: Color(0xfffef2fe),
                               style: GoogleFonts.secularOne(
-                                color: Colors.black,
+                                color: Color(0xfffef2fe),
                                 fontWeight: FontWeight.w500,
                               ),
                               decoration: InputDecoration(
                                 hintText: "Password",
                                 hintStyle: GoogleFonts.secularOne(
-                                  color: Colors.black,
+                                  color: Color(0xfffef2fe),
                                   fontWeight: FontWeight.w500,
                                 ),
                                 border: InputBorder.none,
@@ -183,12 +183,12 @@ class _SigninScreenState extends State<SigninScreen> {
                         style: GoogleFonts.secularOne(
                           fontWeight: FontWeight.bold,
                           fontSize: 28,
-                          color: Colors.white,
+                          color: Color(0xffd7a5d3),
                         ),
                       ),
                       CircleAvatar(
                         radius: 30,
-                        backgroundColor: Colors.white,
+                        backgroundColor: Color(0xffd7a5d3),
                         child: IconButton(
                           color: Colors.black,
                           onPressed: () async {
@@ -229,6 +229,7 @@ class _SigninScreenState extends State<SigninScreen> {
                           },
                           icon: Icon(
                             Icons.arrow_forward,
+                            color: Color(0xfffef2fe),
                           ),
                         ),
                       ),

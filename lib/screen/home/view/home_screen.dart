@@ -1,5 +1,4 @@
-import 'dart:io';
-
+import 'dart:convert';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -24,7 +23,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.black,
+        backgroundColor: Color(0xfffef2fe),
         body: Column(
           children: [
             Container(
@@ -32,19 +31,14 @@ class _HomeScreenState extends State<HomeScreen> {
               width: double.infinity,
               child: Row(
                 children: [
-                  InkWell(
-                    onTap: () {
-                      Get.toNamed('insert_screen');
-                    },
-                    child: Container(
-                      height: 60,
-                      width: 60,
-                      alignment: Alignment.center,
-                      child: Icon(
-                        Icons.shopping_bag,
-                        color: Colors.white,
-                        size: 40,
-                      ),
+                  Container(
+                    height: 60,
+                    width: 60,
+                    alignment: Alignment.center,
+                    child: Icon(
+                      Icons.shopping_bag,
+                      color: Color(0xffd7a5d3),
+                      size: 40,
                     ),
                   ),
                   Expanded(
@@ -64,7 +58,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               style: GoogleFonts.secularOne(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 22,
-                                color: Colors.white,
+                                color: Color(0xffd7a5d3),
                                 letterSpacing: 1,
                               ),
                             ),
@@ -88,7 +82,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         alignment: Alignment.center,
                         child: Icon(
                           Icons.logout,
-                          color: Colors.white,
+                          color: Color(0xffd7a5d3),
                           size: 25,
                         ),
                       ),
@@ -113,7 +107,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       String description = data['description'];
                       String offer = data['offer'];
                       String category = data['category'];
-                      String? image = data['image'];
+                      String image = data['image'];
                       HomeModal homeModal = HomeModal(
                         name: name,
                         price: price,
@@ -125,167 +119,195 @@ class _HomeScreenState extends State<HomeScreen> {
                       );
                       dataList.add(homeModal);
                     }
-                    return ListView.builder(
-                      itemBuilder: (context, index) {
-                        return Padding(
-                          padding: EdgeInsets.only(
-                            left: 20,
-                            right: 20,
-                            bottom: 10,
-                            top: 10,
-                          ),
-                          child: GestureDetector(
-                            onTap: () {
-                              homeController.dataList.clear();
-                              var id = dataList[index].id;
-                              var name = dataList[index].name;
-                              var description = dataList[index].description;
-                              var category = dataList[index].category;
-                              var price = dataList[index].price;
-                              var offer = dataList[index].offer;
-                              var image = dataList[index].image;
-                              UpdateModal updateModal = UpdateModal(
-                                id: id,
-                                description: description,
-                                offer: offer,
-                                category: category,
-                                price: price,
-                                name: name,
-                                image: image,
-                              );
-                              homeController.dataList.add(updateModal);
-                              homeController.selectedUCategory.value =
-                                  "${homeController.dataList[0].category}";
-                              Get.toNamed('update_screen');
-                            },
-                            onDoubleTap: () {
-                              var id = dataList[index].id;
-                              FbHelper.fbHelper.deleteItem(
-                                id: id,
-                              );
-                            },
-                            onLongPress: () {
-                              homeController.resetImage();
-                              Get.toNamed('insert_screen');
-                            },
-                            child: Container(
-                              height: 150,
-                              width: double.infinity,
-                              decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(10),
+                    return dataList.isEmpty
+                        ? Align(
+                            alignment: Alignment.bottomRight,
+                            child: Padding(
+                              padding: EdgeInsets.all(20),
+                              child: FloatingActionButton(
+                                onPressed: () {
+                                  Get.toNamed('insert_screen');
+                                },
+                                child: Icon(
+                                  Icons.add,
+                                  color: Color(0xfffef2fe),
+                                ),
+                                backgroundColor: Color(0xffd7a5d3),
                               ),
-                              child: Padding(
+                            ),
+                          )
+                        : ListView.builder(
+                            itemBuilder: (context, index) {
+                              return Padding(
                                 padding: EdgeInsets.only(
                                   left: 20,
                                   right: 20,
-                                  top: 10,
                                   bottom: 10,
+                                  top: 10,
                                 ),
-                                child: Row(
-                                  children: [
-                                    Container(
-                                      height: 100,
-                                      width: 100,
-                                      alignment: Alignment.center,
-                                      child: dataList[index].image == null
-                                          ? Image.asset(
-                                              "assets/images/2.png",
-                                              height: 150,
-                                              width: 150,
-                                            )
-                                          : Image.file(
-                                              File(
-                                                "${dataList[index].image}",
-                                              ),
-                                              height: 150,
-                                              width: 150,
-                                            ),
+                                child: GestureDetector(
+                                  onTap: () {
+                                    homeController.dataList.clear();
+                                    var id = dataList[index].id;
+                                    var name = dataList[index].name;
+                                    var description =
+                                        dataList[index].description;
+                                    var category = dataList[index].category;
+                                    var price = dataList[index].price;
+                                    var offer = dataList[index].offer;
+                                    var image = dataList[index].image;
+                                    UpdateModal updateModal = UpdateModal(
+                                      id: id,
+                                      description: description,
+                                      offer: offer,
+                                      category: category,
+                                      price: price,
+                                      name: name,
+                                      image: image,
+                                    );
+                                    homeController.dataList.add(updateModal);
+                                    homeController.selectedUCategory.value =
+                                        "${homeController.dataList[0].category}";
+                                    Get.toNamed('update_screen');
+                                  },
+                                  onDoubleTap: () {
+                                    var id = dataList[index].id;
+                                    FbHelper.fbHelper.deleteItem(
+                                      id: id,
+                                    );
+                                  },
+                                  onLongPress: () {
+                                    Get.toNamed('insert_screen');
+                                  },
+                                  child: Container(
+                                    height: 150,
+                                    width: double.infinity,
+                                    decoration: BoxDecoration(
+                                      color: Color(0xffd7a5d3),
+                                      borderRadius: BorderRadius.circular(10),
                                     ),
-                                    SizedBox(
-                                      width: 15,
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsets.symmetric(
-                                        vertical: 5,
+                                    child: Padding(
+                                      padding: EdgeInsets.only(
+                                        left: 20,
+                                        right: 20,
+                                        top: 10,
+                                        bottom: 10,
                                       ),
-                                      child: Container(
-                                        height: double.infinity,
-                                        width: 3,
-                                        color: Colors.black,
+                                      child: Row(
+                                        children: [
+                                          Container(
+                                            height: 100,
+                                            width: 100,
+                                            alignment: Alignment.center,
+                                            child: dataList[index].image == null
+                                                ? Image.asset(
+                                                    "assets/images/2.png",
+                                                    height: 150,
+                                                    width: 150,
+                                                  )
+                                                : Image.memory(
+                                                    base64Decode(
+                                                      dataList[index]
+                                                          .image
+                                                          .toString(),
+                                                    ),
+                                                    height: 150,
+                                                    width: 150,
+                                                  ),
+                                          ),
+                                          SizedBox(
+                                            width: 15,
+                                          ),
+                                          Padding(
+                                            padding: EdgeInsets.symmetric(
+                                              vertical: 5,
+                                            ),
+                                            child: Container(
+                                              height: double.infinity,
+                                              width: 3,
+                                              color: Color(0xfffef2fe),
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            width: 15,
+                                          ),
+                                          Expanded(
+                                            child: Container(
+                                              height: double.infinity,
+                                              width: double.infinity,
+                                              child: Column(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  Text(
+                                                    "${dataList[index].name}",
+                                                    style:
+                                                        GoogleFonts.secularOne(
+                                                      color: Color(0xfffef2fe),
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: 20,
+                                                    ),
+                                                  ),
+                                                  SizedBox(
+                                                    height: 4,
+                                                  ),
+                                                  Text(
+                                                    "${dataList[index].description}",
+                                                    style:
+                                                        GoogleFonts.secularOne(
+                                                      color: Color(0xfffef2fe)
+                                                          .withOpacity(0.6),
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: 12,
+                                                    ),
+                                                  ),
+                                                  SizedBox(
+                                                    height: 4,
+                                                  ),
+                                                  Text(
+                                                    "₹ ${dataList[index].price}.00",
+                                                    style:
+                                                        GoogleFonts.secularOne(
+                                                      color: Color(0xfffef2fe),
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: 16,
+                                                    ),
+                                                  ),
+                                                  SizedBox(
+                                                    height: 4,
+                                                  ),
+                                                  Text(
+                                                    "${dataList[index].category}",
+                                                    style:
+                                                        GoogleFonts.secularOne(
+                                                      color: Color(0xfffef2fe),
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                      fontSize: 14,
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          )
+                                        ],
                                       ),
                                     ),
-                                    SizedBox(
-                                      width: 15,
-                                    ),
-                                    Expanded(
-                                      child: Container(
-                                        height: double.infinity,
-                                        width: double.infinity,
-                                        child: Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Text(
-                                              "${dataList[index].name}",
-                                              style: GoogleFonts.secularOne(
-                                                color: Colors.black,
-                                                fontWeight: FontWeight.bold,
-                                                fontSize: 20,
-                                              ),
-                                            ),
-                                            SizedBox(
-                                              height: 4,
-                                            ),
-                                            Text(
-                                              "${dataList[index].description}",
-                                              style: GoogleFonts.secularOne(
-                                                color: Colors.black54,
-                                                fontWeight: FontWeight.bold,
-                                                fontSize: 12,
-                                              ),
-                                            ),
-                                            SizedBox(
-                                              height: 4,
-                                            ),
-                                            Text(
-                                              "₹ ${dataList[index].price}.00",
-                                              style: GoogleFonts.secularOne(
-                                                color: Colors.green,
-                                                fontWeight: FontWeight.bold,
-                                                fontSize: 16,
-                                              ),
-                                            ),
-                                            SizedBox(
-                                              height: 4,
-                                            ),
-                                            Text(
-                                              "${dataList[index].category}",
-                                              style: GoogleFonts.secularOne(
-                                                color: Colors.black,
-                                                fontWeight: FontWeight.w500,
-                                                fontSize: 14,
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    )
-                                  ],
+                                  ),
                                 ),
-                              ),
-                            ),
-                          ),
-                        );
-                      },
-                      itemCount: dataList.length,
-                    );
+                              );
+                            },
+                            itemCount: dataList.length,
+                          );
                   }
                   return Center(
                     child: CircularProgressIndicator(
-                      color: Colors.white,
+                      color: Color(0xffd7a5d3),
                     ),
                   );
                 },

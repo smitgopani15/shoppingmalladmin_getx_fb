@@ -43,6 +43,5 @@ Future<void> main() async {
 }
 
 // validation
-// category reset
-// image reset
-// ui change
+// by-default asset image condition
+// update image
