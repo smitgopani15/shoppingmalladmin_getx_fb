@@ -42,5 +42,4 @@ Future<void> main() async {
   );
 }
 
-// validation
-// update image
+// update image show

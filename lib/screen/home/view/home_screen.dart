@@ -132,7 +132,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   Icons.add,
                                   color: Color(0xfffef2fe),
                                 ),
-                                backgroundColor: Color(0xffd7a5d3),
+                                backgroundColor: Colors.teal,
                               ),
                             ),
                           )
@@ -183,7 +183,32 @@ class _HomeScreenState extends State<HomeScreen> {
                                     height: 150,
                                     width: double.infinity,
                                     decoration: BoxDecoration(
-                                      color: Colors.teal,
+                                      gradient: LinearGradient(
+                                        begin: Alignment.topLeft,
+                                        end: Alignment.bottomRight,
+                                        colors: [
+                                          Colors.grey.shade200,
+                                          Colors.grey.shade300,
+                                          Colors.grey.shade400,
+                                          Colors.grey.shade500,
+                                        ],
+                                      ),
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: Colors.grey.shade600,
+                                          spreadRadius: 1,
+                                          blurRadius: 15,
+                                          offset: const Offset(5, 5),
+                                        ),
+                                        const BoxShadow(
+                                            color: Colors.white,
+                                            offset: Offset(-5,-5),
+                                            blurRadius: 15,
+                                            spreadRadius: 1
+                                        ) ,
+                                      ],
+                                      color: Color(0xfffef2fe),
+                                      // color: Colors.teal,
                                       borderRadius: BorderRadius.circular(10),
                                     ),
                                     child: Padding(
@@ -225,7 +250,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                             child: Container(
                                               height: double.infinity,
                                               width: 3,
-                                              color: Color(0xfffef2fe),
+                                              color: Colors.teal,
                                             ),
                                           ),
                                           SizedBox(
@@ -245,7 +270,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                                     "${dataList[index].name}",
                                                     style:
                                                         GoogleFonts.secularOne(
-                                                      color: Color(0xfffef2fe),
+                                                      color: Colors.teal,
                                                       fontWeight:
                                                           FontWeight.bold,
                                                       fontSize: 20,
@@ -258,7 +283,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                                     "${dataList[index].description}",
                                                     style:
                                                         GoogleFonts.secularOne(
-                                                      color: Color(0xfffef2fe)
+                                                      color: Colors.teal
                                                           .withOpacity(0.6),
                                                       fontWeight:
                                                           FontWeight.bold,
@@ -272,7 +297,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                                     "₹ ${dataList[index].price}.00",
                                                     style:
                                                         GoogleFonts.secularOne(
-                                                      color: Color(0xfffef2fe),
+                                                      color: Colors.teal,
                                                       fontWeight:
                                                           FontWeight.bold,
                                                       fontSize: 16,
@@ -285,7 +310,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                                     "${dataList[index].category}",
                                                     style:
                                                         GoogleFonts.secularOne(
-                                                      color: Color(0xfffef2fe),
+                                                      color: Colors.teal,
                                                       fontWeight:
                                                           FontWeight.w500,
                                                       fontSize: 14,
@@ -307,7 +332,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   }
                   return Center(
                     child: CircularProgressIndicator(
-                      color: Color(0xffd7a5d3),
+                      color: Colors.teal,
                     ),
                   );
                 },

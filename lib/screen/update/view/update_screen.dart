@@ -542,9 +542,9 @@ class _UpdateScreenState extends State<UpdateScreen> {
                           () => Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              homeController.uImagePath.value.isEmpty
-                                  ? Image.asset(
-                                      "assets/images/2.png",
+                              homeController.uImagePath.value == "empty"
+                                  ? Image.memory(
+                                      base64Decode(image),
                                       height: 150,
                                       width: 150,
                                     )
@@ -609,7 +609,9 @@ class _UpdateScreenState extends State<UpdateScreen> {
                             description: descriptionc.text,
                             offer: offerc.text,
                             category: homeController.selectedUCategory.value,
-                            image: homeController.uImagePath.value,
+                            image: homeController.uImagePath.value == "empty"
+                                ? image
+                                : homeController.uImagePath.value,
                           );
                           Get.back();
                           homeController.resetUImage();
