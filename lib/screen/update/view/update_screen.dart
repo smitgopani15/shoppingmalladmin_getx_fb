@@ -63,7 +63,7 @@ class _UpdateScreenState extends State<UpdateScreen> {
                       alignment: Alignment.center,
                       child: Icon(
                         Icons.arrow_back,
-                        color: Color(0xffd7a5d3),
+                        color: Colors.teal,
                         size: 25,
                       ),
                     ),
@@ -85,7 +85,7 @@ class _UpdateScreenState extends State<UpdateScreen> {
                               style: GoogleFonts.secularOne(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 22,
-                                color: Color(0xffd7a5d3),
+                                color: Colors.teal,
                                 letterSpacing: 1,
                               ),
                             ),
@@ -118,7 +118,7 @@ class _UpdateScreenState extends State<UpdateScreen> {
                           style: GoogleFonts.secularOne(
                             fontWeight: FontWeight.bold,
                             fontSize: 15,
-                            color: Color(0xffd7a5d3),
+                            color: Colors.teal,
                           ),
                         ),
                       ),
@@ -129,7 +129,7 @@ class _UpdateScreenState extends State<UpdateScreen> {
                         height: 65,
                         width: double.infinity,
                         decoration: BoxDecoration(
-                          color: Color(0xffd7a5d3),
+                          color: Colors.teal,
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: Padding(
@@ -196,7 +196,7 @@ class _UpdateScreenState extends State<UpdateScreen> {
                           style: GoogleFonts.secularOne(
                             fontWeight: FontWeight.bold,
                             fontSize: 15,
-                            color: Color(0xffd7a5d3),
+                            color: Colors.teal,
                           ),
                         ),
                       ),
@@ -207,7 +207,7 @@ class _UpdateScreenState extends State<UpdateScreen> {
                         height: 65,
                         width: double.infinity,
                         decoration: BoxDecoration(
-                          color: Color(0xffd7a5d3),
+                          color: Colors.teal,
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: Padding(
@@ -274,7 +274,7 @@ class _UpdateScreenState extends State<UpdateScreen> {
                           style: GoogleFonts.secularOne(
                             fontWeight: FontWeight.bold,
                             fontSize: 15,
-                            color: Color(0xffd7a5d3),
+                            color: Colors.teal,
                           ),
                         ),
                       ),
@@ -285,7 +285,7 @@ class _UpdateScreenState extends State<UpdateScreen> {
                         height: 65,
                         width: double.infinity,
                         decoration: BoxDecoration(
-                          color: Color(0xffd7a5d3),
+                          color: Colors.teal,
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: Padding(
@@ -352,7 +352,7 @@ class _UpdateScreenState extends State<UpdateScreen> {
                           style: GoogleFonts.secularOne(
                             fontWeight: FontWeight.bold,
                             fontSize: 15,
-                            color: Color(0xffd7a5d3),
+                            color: Colors.teal,
                           ),
                         ),
                       ),
@@ -363,7 +363,7 @@ class _UpdateScreenState extends State<UpdateScreen> {
                         height: 65,
                         width: double.infinity,
                         decoration: BoxDecoration(
-                          color: Color(0xffd7a5d3),
+                          color: Colors.teal,
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: Padding(
@@ -430,7 +430,7 @@ class _UpdateScreenState extends State<UpdateScreen> {
                           style: GoogleFonts.secularOne(
                             fontWeight: FontWeight.bold,
                             fontSize: 15,
-                            color: Color(0xffd7a5d3),
+                            color: Colors.teal,
                           ),
                         ),
                       ),
@@ -441,7 +441,7 @@ class _UpdateScreenState extends State<UpdateScreen> {
                         height: 65,
                         width: double.infinity,
                         decoration: BoxDecoration(
-                          color: Color(0xffd7a5d3),
+                          color: Colors.teal,
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: Row(
@@ -497,7 +497,7 @@ class _UpdateScreenState extends State<UpdateScreen> {
                                 decoration: InputDecoration(
                                   border: InputBorder.none,
                                 ),
-                                dropdownColor: Color(0xffd7a5d3),
+                                dropdownColor: Colors.teal,
                                 style: GoogleFonts.secularOne(
                                   color: Color(0xfffef2fe),
                                   fontWeight: FontWeight.w500,
@@ -524,7 +524,7 @@ class _UpdateScreenState extends State<UpdateScreen> {
                           style: GoogleFonts.secularOne(
                             fontWeight: FontWeight.bold,
                             fontSize: 15,
-                            color: Color(0xffd7a5d3),
+                            color: Colors.teal,
                           ),
                         ),
                       ),
@@ -535,7 +535,7 @@ class _UpdateScreenState extends State<UpdateScreen> {
                         height: 300,
                         width: double.infinity,
                         decoration: BoxDecoration(
-                          color: Color(0xffd7a5d3),
+                          color: Colors.teal,
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: Obx(
@@ -543,11 +543,17 @@ class _UpdateScreenState extends State<UpdateScreen> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               homeController.uImagePath.value == "empty"
-                                  ? Image.memory(
-                                      base64Decode(image),
-                                      height: 150,
-                                      width: 150,
-                                    )
+                                  ? image == null
+                                      ? Image.asset(
+                                          "assets/images/2.png",
+                                          height: 150,
+                                          width: 150,
+                                        )
+                                      : Image.memory(
+                                          base64Decode(image),
+                                          height: 150,
+                                          width: 150,
+                                        )
                                   : Image.memory(
                                       base64Decode(
                                         homeController.uImagePath.value,
@@ -587,7 +593,7 @@ class _UpdateScreenState extends State<UpdateScreen> {
                                       style: GoogleFonts.secularOne(
                                         fontWeight: FontWeight.bold,
                                         fontSize: 16,
-                                        color: Color(0xffd7a5d3),
+                                        color: Colors.teal,
                                       ),
                                     ),
                                   ),
@@ -620,7 +626,7 @@ class _UpdateScreenState extends State<UpdateScreen> {
                           height: 60,
                           width: double.infinity,
                           decoration: BoxDecoration(
-                            color: Color(0xffd7a5d3),
+                            color: Colors.teal,
                             borderRadius: BorderRadius.circular(10),
                           ),
                           alignment: Alignment.center,

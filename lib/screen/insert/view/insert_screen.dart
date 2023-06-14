@@ -44,7 +44,7 @@ class _InsertScreenState extends State<InsertScreen> {
                       alignment: Alignment.center,
                       child: Icon(
                         Icons.arrow_back,
-                        color: Color(0xffd7a5d3),
+                        color: Colors.teal,
                         size: 25,
                       ),
                     ),
@@ -66,7 +66,7 @@ class _InsertScreenState extends State<InsertScreen> {
                               style: GoogleFonts.secularOne(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 22,
-                                color: Color(0xffd7a5d3),
+                                color: Colors.teal,
                                 letterSpacing: 1,
                               ),
                             ),
@@ -99,7 +99,7 @@ class _InsertScreenState extends State<InsertScreen> {
                           style: GoogleFonts.secularOne(
                             fontWeight: FontWeight.bold,
                             fontSize: 15,
-                            color: Color(0xffd7a5d3),
+                            color: Colors.teal,
                           ),
                         ),
                       ),
@@ -110,7 +110,7 @@ class _InsertScreenState extends State<InsertScreen> {
                         height: 65,
                         width: double.infinity,
                         decoration: BoxDecoration(
-                          color: Color(0xffd7a5d3),
+                          color: Colors.teal,
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: Padding(
@@ -177,7 +177,7 @@ class _InsertScreenState extends State<InsertScreen> {
                           style: GoogleFonts.secularOne(
                             fontWeight: FontWeight.bold,
                             fontSize: 15,
-                            color: Color(0xffd7a5d3),
+                            color: Colors.teal,
                           ),
                         ),
                       ),
@@ -188,7 +188,7 @@ class _InsertScreenState extends State<InsertScreen> {
                         height: 65,
                         width: double.infinity,
                         decoration: BoxDecoration(
-                          color: Color(0xffd7a5d3),
+                          color: Colors.teal,
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: Padding(
@@ -255,7 +255,7 @@ class _InsertScreenState extends State<InsertScreen> {
                           style: GoogleFonts.secularOne(
                             fontWeight: FontWeight.bold,
                             fontSize: 15,
-                            color: Color(0xffd7a5d3),
+                            color: Colors.teal,
                           ),
                         ),
                       ),
@@ -266,7 +266,7 @@ class _InsertScreenState extends State<InsertScreen> {
                         height: 65,
                         width: double.infinity,
                         decoration: BoxDecoration(
-                          color: Color(0xffd7a5d3),
+                          color: Colors.teal,
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: Padding(
@@ -333,7 +333,7 @@ class _InsertScreenState extends State<InsertScreen> {
                           style: GoogleFonts.secularOne(
                             fontWeight: FontWeight.bold,
                             fontSize: 15,
-                            color: Color(0xffd7a5d3),
+                            color: Colors.teal,
                           ),
                         ),
                       ),
@@ -344,7 +344,7 @@ class _InsertScreenState extends State<InsertScreen> {
                         height: 65,
                         width: double.infinity,
                         decoration: BoxDecoration(
-                          color: Color(0xffd7a5d3),
+                          color: Colors.teal,
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: Padding(
@@ -411,7 +411,7 @@ class _InsertScreenState extends State<InsertScreen> {
                           style: GoogleFonts.secularOne(
                             fontWeight: FontWeight.bold,
                             fontSize: 15,
-                            color: Color(0xffd7a5d3),
+                            color: Colors.teal,
                           ),
                         ),
                       ),
@@ -422,7 +422,7 @@ class _InsertScreenState extends State<InsertScreen> {
                         height: 65,
                         width: double.infinity,
                         decoration: BoxDecoration(
-                          color: Color(0xffd7a5d3),
+                          color: Colors.teal,
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: Row(
@@ -478,7 +478,7 @@ class _InsertScreenState extends State<InsertScreen> {
                                 decoration: InputDecoration(
                                   border: InputBorder.none,
                                 ),
-                                dropdownColor: Color(0xffd7a5d3),
+                                dropdownColor: Colors.teal,
                                 style: GoogleFonts.secularOne(
                                   color: Color(0xfffef2fe),
                                   fontWeight: FontWeight.w500,
@@ -505,7 +505,7 @@ class _InsertScreenState extends State<InsertScreen> {
                           style: GoogleFonts.secularOne(
                             fontWeight: FontWeight.bold,
                             fontSize: 15,
-                            color: Color(0xffd7a5d3),
+                            color: Colors.teal,
                           ),
                         ),
                       ),
@@ -516,7 +516,7 @@ class _InsertScreenState extends State<InsertScreen> {
                         height: 300,
                         width: double.infinity,
                         decoration: BoxDecoration(
-                          color: Color(0xffd7a5d3),
+                          color: Colors.teal,
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: Column(
@@ -568,7 +568,7 @@ class _InsertScreenState extends State<InsertScreen> {
                                     style: GoogleFonts.secularOne(
                                       fontWeight: FontWeight.bold,
                                       fontSize: 16,
-                                      color: Color(0xffd7a5d3),
+                                      color: Colors.teal,
                                     ),
                                   ),
                                 ),
@@ -600,7 +600,7 @@ class _InsertScreenState extends State<InsertScreen> {
                           height: 60,
                           width: double.infinity,
                           decoration: BoxDecoration(
-                            color: Color(0xffd7a5d3),
+                            color: Colors.teal,
                             borderRadius: BorderRadius.circular(10),
                           ),
                           alignment: Alignment.center,

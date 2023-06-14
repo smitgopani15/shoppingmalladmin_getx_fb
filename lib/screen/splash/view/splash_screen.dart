@@ -42,7 +42,7 @@ class _SplashScreenState extends State<SplashScreen> {
                   style: GoogleFonts.secularOne(
                     fontWeight: FontWeight.w500,
                     fontSize: 14,
-                    color: Color(0xffd7a5d3),
+                    color: Colors.teal,
                   ),
                 ),
               ),
@@ -53,7 +53,7 @@ class _SplashScreenState extends State<SplashScreen> {
                 children: [
                   Icon(
                     Icons.shopping_bag,
-                    color: Color(0xffd7a5d3),
+                    color: Colors.teal,
                     size: 160,
                   ),
                   Text(
@@ -61,7 +61,7 @@ class _SplashScreenState extends State<SplashScreen> {
                     style: GoogleFonts.secularOne(
                       fontWeight: FontWeight.bold,
                       fontSize: 22,
-                      color: Color(0xffd7a5d3),
+                      color: Colors.teal,
                       letterSpacing: 1,
                     ),
                   ),
