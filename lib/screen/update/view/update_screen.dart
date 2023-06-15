@@ -129,34 +129,43 @@ class _UpdateScreenState extends State<UpdateScreen> {
                         height: 65,
                         width: double.infinity,
                         decoration: BoxDecoration(
-                          color: Colors.teal,
+                          border: Border.all(
+                            color: Colors.teal,
+                            width: 3,
+                          ),
+                          color: Color(0xfffef2fe),
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: Padding(
                           padding: EdgeInsets.only(
                             left: 20,
                             right: 20,
-                            top: 10,
-                            bottom: 10,
                           ),
                           child: Row(
                             children: [
-                              Icon(
-                                Icons.devices_other,
-                                color: Color(0xfffef2fe),
-                                size: 30,
+                              Padding(
+                                padding: EdgeInsets.only(
+                                  top: 10,
+                                  bottom: 10,
+                                ),
+                                child: Icon(
+                                  Icons.devices_other,
+                                  color: Colors.teal,
+                                  size: 30,
+                                ),
                               ),
                               SizedBox(
                                 width: 15,
                               ),
                               Padding(
-                                padding: EdgeInsets.symmetric(
-                                  vertical: 5,
+                                padding: EdgeInsets.only(
+                                  top: 12,
+                                  bottom: 12,
                                 ),
                                 child: Container(
                                   height: double.infinity,
                                   width: 3,
-                                  color: Color(0xfffef2fe),
+                                  color: Colors.teal,
                                 ),
                               ),
                               SizedBox(
@@ -165,15 +174,15 @@ class _UpdateScreenState extends State<UpdateScreen> {
                               Expanded(
                                 child: TextField(
                                   controller: namec,
-                                  cursorColor: Color(0xfffef2fe),
+                                  cursorColor: Colors.teal,
                                   style: GoogleFonts.secularOne(
-                                    color: Color(0xfffef2fe),
+                                    color: Colors.teal,
                                     fontWeight: FontWeight.w500,
                                   ),
                                   decoration: InputDecoration(
                                     hintText: "Laptop,Mobile,A/c...",
                                     hintStyle: GoogleFonts.secularOne(
-                                      color: Color(0xfffef2fe).withOpacity(0.6),
+                                      color: Colors.teal.withOpacity(0.6),
                                       fontWeight: FontWeight.w500,
                                     ),
                                     border: InputBorder.none,
@@ -207,34 +216,43 @@ class _UpdateScreenState extends State<UpdateScreen> {
                         height: 65,
                         width: double.infinity,
                         decoration: BoxDecoration(
-                          color: Colors.teal,
+                          border: Border.all(
+                            color: Colors.teal,
+                            width: 3,
+                          ),
+                          color: Color(0xfffef2fe),
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: Padding(
                           padding: EdgeInsets.only(
                             left: 20,
                             right: 20,
-                            top: 10,
-                            bottom: 10,
                           ),
                           child: Row(
                             children: [
-                              Icon(
-                                Icons.currency_rupee,
-                                color: Color(0xfffef2fe),
-                                size: 30,
+                              Padding(
+                                padding: EdgeInsets.only(
+                                  top: 10,
+                                  bottom: 10,
+                                ),
+                                child: Icon(
+                                  Icons.currency_rupee,
+                                  color: Colors.teal,
+                                  size: 30,
+                                ),
                               ),
                               SizedBox(
                                 width: 15,
                               ),
                               Padding(
-                                padding: EdgeInsets.symmetric(
-                                  vertical: 5,
+                                padding: EdgeInsets.only(
+                                  top: 12,
+                                  bottom: 12,
                                 ),
                                 child: Container(
                                   height: double.infinity,
                                   width: 3,
-                                  color: Color(0xfffef2fe),
+                                  color: Colors.teal,
                                 ),
                               ),
                               SizedBox(
@@ -243,15 +261,15 @@ class _UpdateScreenState extends State<UpdateScreen> {
                               Expanded(
                                 child: TextField(
                                   controller: pricec,
-                                  cursorColor: Color(0xfffef2fe),
+                                  cursorColor: Colors.teal,
                                   style: GoogleFonts.secularOne(
-                                    color: Color(0xfffef2fe),
+                                    color: Colors.teal,
                                     fontWeight: FontWeight.w500,
                                   ),
                                   decoration: InputDecoration(
                                     hintText: "10000,20000,30000...",
                                     hintStyle: GoogleFonts.secularOne(
-                                      color: Color(0xfffef2fe).withOpacity(0.6),
+                                      color: Colors.teal.withOpacity(0.6),
                                       fontWeight: FontWeight.w500,
                                     ),
                                     border: InputBorder.none,
@@ -285,34 +303,43 @@ class _UpdateScreenState extends State<UpdateScreen> {
                         height: 65,
                         width: double.infinity,
                         decoration: BoxDecoration(
-                          color: Colors.teal,
+                          border: Border.all(
+                            color: Colors.teal,
+                            width: 3,
+                          ),
+                          color: Color(0xfffef2fe),
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: Padding(
                           padding: EdgeInsets.only(
                             left: 20,
                             right: 20,
-                            top: 10,
-                            bottom: 10,
                           ),
                           child: Row(
                             children: [
-                              Icon(
-                                Icons.description,
-                                color: Color(0xfffef2fe),
-                                size: 30,
+                              Padding(
+                                padding: EdgeInsets.only(
+                                  top: 10,
+                                  bottom: 10,
+                                ),
+                                child: Icon(
+                                  Icons.description,
+                                  color: Colors.teal,
+                                  size: 30,
+                                ),
                               ),
                               SizedBox(
                                 width: 15,
                               ),
                               Padding(
-                                padding: EdgeInsets.symmetric(
-                                  vertical: 5,
+                                padding: EdgeInsets.only(
+                                  top: 12,
+                                  bottom: 12,
                                 ),
                                 child: Container(
                                   height: double.infinity,
                                   width: 3,
-                                  color: Color(0xfffef2fe),
+                                  color: Colors.teal,
                                 ),
                               ),
                               SizedBox(
@@ -321,15 +348,15 @@ class _UpdateScreenState extends State<UpdateScreen> {
                               Expanded(
                                 child: TextField(
                                   controller: descriptionc,
-                                  cursorColor: Color(0xfffef2fe),
+                                  cursorColor: Colors.teal,
                                   style: GoogleFonts.secularOne(
-                                    color: Color(0xfffef2fe),
+                                    color: Colors.teal,
                                     fontWeight: FontWeight.w500,
                                   ),
                                   decoration: InputDecoration(
                                     hintText: "5G,12GB,A17 Chip...",
                                     hintStyle: GoogleFonts.secularOne(
-                                      color: Color(0xfffef2fe).withOpacity(0.6),
+                                      color: Colors.teal.withOpacity(0.6),
                                       fontWeight: FontWeight.w500,
                                     ),
                                     border: InputBorder.none,
@@ -363,34 +390,43 @@ class _UpdateScreenState extends State<UpdateScreen> {
                         height: 65,
                         width: double.infinity,
                         decoration: BoxDecoration(
-                          color: Colors.teal,
+                          border: Border.all(
+                            color: Colors.teal,
+                            width: 3,
+                          ),
+                          color: Color(0xfffef2fe),
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: Padding(
                           padding: EdgeInsets.only(
                             left: 20,
                             right: 20,
-                            top: 10,
-                            bottom: 10,
                           ),
                           child: Row(
                             children: [
-                              Icon(
-                                Icons.campaign,
-                                color: Color(0xfffef2fe),
-                                size: 30,
+                              Padding(
+                                padding: EdgeInsets.only(
+                                  top: 10,
+                                  bottom: 10,
+                                ),
+                                child: Icon(
+                                  Icons.campaign,
+                                  color: Colors.teal,
+                                  size: 30,
+                                ),
                               ),
                               SizedBox(
                                 width: 15,
                               ),
                               Padding(
-                                padding: EdgeInsets.symmetric(
-                                  vertical: 5,
+                                padding: EdgeInsets.only(
+                                  top: 12,
+                                  bottom: 12,
                                 ),
                                 child: Container(
                                   height: double.infinity,
                                   width: 3,
-                                  color: Color(0xfffef2fe),
+                                  color: Colors.teal,
                                 ),
                               ),
                               SizedBox(
@@ -399,15 +435,15 @@ class _UpdateScreenState extends State<UpdateScreen> {
                               Expanded(
                                 child: TextField(
                                   controller: offerc,
-                                  cursorColor: Color(0xfffef2fe),
+                                  cursorColor: Colors.teal,
                                   style: GoogleFonts.secularOne(
-                                    color: Color(0xfffef2fe),
+                                    color: Colors.teal,
                                     fontWeight: FontWeight.w500,
                                   ),
                                   decoration: InputDecoration(
                                     hintText: "10,20,30...",
                                     hintStyle: GoogleFonts.secularOne(
-                                      color: Color(0xfffef2fe).withOpacity(0.6),
+                                      color: Colors.teal.withOpacity(0.6),
                                       fontWeight: FontWeight.w500,
                                     ),
                                     border: InputBorder.none,
@@ -441,7 +477,11 @@ class _UpdateScreenState extends State<UpdateScreen> {
                         height: 65,
                         width: double.infinity,
                         decoration: BoxDecoration(
-                          color: Colors.teal,
+                          border: Border.all(
+                            color: Colors.teal,
+                            width: 3,
+                          ),
+                          color: Color(0xfffef2fe),
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: Row(
@@ -449,13 +489,17 @@ class _UpdateScreenState extends State<UpdateScreen> {
                             Padding(
                               padding: EdgeInsets.only(
                                 left: 20,
-                                top: 10,
-                                bottom: 10,
                               ),
-                              child: Icon(
-                                Icons.category,
-                                color: Color(0xfffef2fe),
-                                size: 30,
+                              child: Padding(
+                                padding: EdgeInsets.only(
+                                  top: 10,
+                                  bottom: 10,
+                                ),
+                                child: Icon(
+                                  Icons.category,
+                                  color: Colors.teal,
+                                  size: 30,
+                                ),
                               ),
                             ),
                             SizedBox(
@@ -463,13 +507,13 @@ class _UpdateScreenState extends State<UpdateScreen> {
                             ),
                             Padding(
                               padding: EdgeInsets.only(
-                                top: 15,
-                                bottom: 15,
+                                top: 12,
+                                bottom: 12,
                               ),
                               child: Container(
                                 height: double.infinity,
                                 width: 3,
-                                color: Color(0xfffef2fe),
+                                color: Colors.teal,
                               ),
                             ),
                             SizedBox(
@@ -492,14 +536,14 @@ class _UpdateScreenState extends State<UpdateScreen> {
                                 },
                                 icon: Icon(
                                   Icons.arrow_drop_down,
-                                  color: Color(0xfffef2fe),
+                                  color: Colors.teal,
                                 ),
                                 decoration: InputDecoration(
                                   border: InputBorder.none,
                                 ),
-                                dropdownColor: Colors.teal,
+                                dropdownColor: Color(0xfffef2fe),
                                 style: GoogleFonts.secularOne(
-                                  color: Color(0xfffef2fe),
+                                  color: Colors.teal,
                                   fontWeight: FontWeight.w500,
                                   fontSize: 16,
                                 ),
@@ -535,7 +579,11 @@ class _UpdateScreenState extends State<UpdateScreen> {
                         height: 300,
                         width: double.infinity,
                         decoration: BoxDecoration(
-                          color: Colors.teal,
+                          border: Border.all(
+                            color: Colors.teal,
+                            width: 3,
+                          ),
+                          color: Color(0xfffef2fe),
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: Obx(
@@ -578,8 +626,12 @@ class _UpdateScreenState extends State<UpdateScreen> {
                                 },
                                 child: Container(
                                   height: 50,
-                                  width: 220,
+                                  width: 200,
                                   decoration: BoxDecoration(
+                                    border: Border.all(
+                                      color: Colors.teal,
+                                      width: 3,
+                                    ),
                                     color: Color(0xfffef2fe),
                                     borderRadius: BorderRadius.circular(10),
                                   ),
@@ -621,6 +673,7 @@ class _UpdateScreenState extends State<UpdateScreen> {
                           );
                           Get.back();
                           homeController.resetUImage();
+                          homeController.dataList.clear();
                         },
                         child: Container(
                           height: 60,

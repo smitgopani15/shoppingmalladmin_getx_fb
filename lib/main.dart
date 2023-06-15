@@ -41,7 +41,3 @@ Future<void> main() async {
     ),
   );
 }
-
-// update image show
-// notification
-// ui color

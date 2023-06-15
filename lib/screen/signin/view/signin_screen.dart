@@ -61,22 +61,27 @@ class _SigninScreenState extends State<SigninScreen> {
                       padding: EdgeInsets.only(
                         left: 20,
                         right: 20,
-                        top: 10,
-                        bottom: 10,
                       ),
                       child: Row(
                         children: [
-                          Icon(
-                            Icons.email,
-                            color: Color(0xfffef2fe),
-                            size: 30,
+                          Padding(
+                            padding: EdgeInsets.only(
+                              top: 10,
+                              bottom: 10,
+                            ),
+                            child: Icon(
+                              Icons.email,
+                              color: Color(0xfffef2fe),
+                              size: 30,
+                            ),
                           ),
                           SizedBox(
                             width: 15,
                           ),
                           Padding(
-                            padding: EdgeInsets.symmetric(
-                              vertical: 5,
+                            padding: EdgeInsets.only(
+                              top: 12,
+                              bottom: 12,
                             ),
                             child: Container(
                               height: double.infinity,
@@ -123,22 +128,27 @@ class _SigninScreenState extends State<SigninScreen> {
                       padding: EdgeInsets.only(
                         left: 20,
                         right: 20,
-                        top: 10,
-                        bottom: 10,
                       ),
                       child: Row(
                         children: [
-                          Icon(
-                            Icons.lock,
-                            color: Color(0xfffef2fe),
-                            size: 30,
+                          Padding(
+                            padding: EdgeInsets.only(
+                              top: 10,
+                              bottom: 10,
+                            ),
+                            child: Icon(
+                              Icons.lock,
+                              color: Color(0xfffef2fe),
+                              size: 30,
+                            ),
                           ),
                           SizedBox(
                             width: 15,
                           ),
                           Padding(
-                            padding: EdgeInsets.symmetric(
-                              vertical: 5,
+                            padding: EdgeInsets.only(
+                              top: 12,
+                              bottom: 12,
                             ),
                             child: Container(
                               height: double.infinity,
