@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -671,6 +672,19 @@ class _UpdateScreenState extends State<UpdateScreen> {
                                 ? image
                                 : homeController.uImagePath.value,
                           );
+                          final snackBar = SnackBar(
+                            elevation: 0,
+                            behavior: SnackBarBehavior.floating,
+                            backgroundColor: Colors.transparent,
+                            content: AwesomeSnackbarContent(
+                              title: "Success",
+                              message: "item Update successfully !",
+                              contentType: ContentType.success,
+                            ),
+                          );
+                          ScaffoldMessenger.of(context)
+                            ..hideCurrentSnackBar()
+                            ..showSnackBar(snackBar);
                           Get.back();
                           homeController.resetUImage();
                           homeController.dataList.clear();

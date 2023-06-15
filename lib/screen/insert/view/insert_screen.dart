@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -418,7 +419,7 @@ class _InsertScreenState extends State<InsertScreen> {
                                   controller: offerc,
                                   cursorColor: Colors.teal,
                                   style: GoogleFonts.secularOne(
-                                    color: Color(0xfffef2fe),
+                                    color: Colors.teal,
                                     fontWeight: FontWeight.w500,
                                   ),
                                   decoration: InputDecoration(
@@ -644,6 +645,19 @@ class _InsertScreenState extends State<InsertScreen> {
                                 ? null
                                 : homeController.iImagePath.value,
                           );
+                          final snackBar = SnackBar(
+                            elevation: 0,
+                            behavior: SnackBarBehavior.floating,
+                            backgroundColor: Colors.transparent,
+                            content: AwesomeSnackbarContent(
+                              title: "Success",
+                              message: "item add successfully !",
+                              contentType: ContentType.success,
+                            ),
+                          );
+                          ScaffoldMessenger.of(context)
+                            ..hideCurrentSnackBar()
+                            ..showSnackBar(snackBar);
                           Get.back();
                           homeController.resetICategory();
                           homeController.resetIImage();
