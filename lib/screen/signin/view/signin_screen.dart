@@ -247,7 +247,12 @@ class _SigninScreenState extends State<SigninScreen> {
                         ),
                         builder: (context) {
                           return Padding(
-                            padding: EdgeInsets.all(30),
+                            padding: EdgeInsets.only(
+                              left: 30,
+                              right: 30,
+                              top: 30,
+                              bottom: MediaQuery.of(context).viewInsets.bottom,
+                            ),
                             child: Column(
                               mainAxisSize: MainAxisSize.min,
                               children: [
@@ -390,6 +395,9 @@ class _SigninScreenState extends State<SigninScreen> {
                                     ),
                                   ),
                                 ),
+                                SizedBox(
+                                  height: 30,
+                                ),
                               ],
                             ),
                           );
@@ -425,25 +433,42 @@ class _SigninScreenState extends State<SigninScreen> {
                         child: IconButton(
                           color: Color(0xfffef2fe),
                           onPressed: () async {
-                            String? msg = await FbHelper.fbHelper.signIn(
-                              email: emailc.text,
-                              password: passwordc.text,
-                            );
-                            if (msg == "login successfully !") {
-                              final snackBar = SnackBar(
-                                elevation: 0,
-                                behavior: SnackBarBehavior.floating,
-                                backgroundColor: Colors.transparent,
-                                content: AwesomeSnackbarContent(
-                                  title: "Success",
-                                  message: "${msg}",
-                                  contentType: ContentType.success,
-                                ),
+                            if (emailc.text == "admin01@gmail.com" &&
+                                passwordc.text == "admin01") {
+                              String? msg = await FbHelper.fbHelper.signIn(
+                                email: emailc.text,
+                                password: passwordc.text,
                               );
-                              ScaffoldMessenger.of(context)
-                                ..hideCurrentSnackBar()
-                                ..showSnackBar(snackBar);
-                              Get.offAndToNamed('home_screen');
+                              if (msg == "login successfully !") {
+                                final snackBar = SnackBar(
+                                  elevation: 0,
+                                  behavior: SnackBarBehavior.floating,
+                                  backgroundColor: Colors.transparent,
+                                  content: AwesomeSnackbarContent(
+                                    title: "Success",
+                                    message: "${msg}",
+                                    contentType: ContentType.success,
+                                  ),
+                                );
+                                ScaffoldMessenger.of(context)
+                                  ..hideCurrentSnackBar()
+                                  ..showSnackBar(snackBar);
+                                Get.offAndToNamed('home_screen');
+                              } else {
+                                final snackBar = SnackBar(
+                                  elevation: 0,
+                                  behavior: SnackBarBehavior.floating,
+                                  backgroundColor: Colors.transparent,
+                                  content: AwesomeSnackbarContent(
+                                    title: "Failure",
+                                    message: "${msg}",
+                                    contentType: ContentType.failure,
+                                  ),
+                                );
+                                ScaffoldMessenger.of(context)
+                                  ..hideCurrentSnackBar()
+                                  ..showSnackBar(snackBar);
+                              }
                             } else {
                               final snackBar = SnackBar(
                                 elevation: 0,
@@ -451,7 +476,7 @@ class _SigninScreenState extends State<SigninScreen> {
                                 backgroundColor: Colors.transparent,
                                 content: AwesomeSnackbarContent(
                                   title: "Failure",
-                                  message: "${msg}",
+                                  message: "login failed !",
                                   contentType: ContentType.failure,
                                 ),
                               );
