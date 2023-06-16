@@ -5,6 +5,7 @@ import 'package:sizer/sizer.dart';
 import 'package:untitled_getx_fb/screen/home/view/home_screen.dart';
 import 'package:untitled_getx_fb/screen/insert/view/insert_screen.dart';
 import 'package:untitled_getx_fb/screen/signin/view/signin_screen.dart';
+import 'package:untitled_getx_fb/screen/signup/view/signup_screen.dart';
 import 'package:untitled_getx_fb/screen/splash/view/splash_screen.dart';
 import 'package:untitled_getx_fb/screen/update/view/update_screen.dart';
 
@@ -25,6 +26,10 @@ Future<void> main() async {
             page: () => SigninScreen(),
           ),
           GetPage(
+            name: '/signup_screen',
+            page: () => SignupScreen(),
+          ),
+          GetPage(
             name: '/home_screen',
             page: () => HomeScreen(),
           ),
@@ -41,4 +46,5 @@ Future<void> main() async {
     ),
   );
 }
+
 // https://www.youtube.com/watch?v=q5E8811Ut_8

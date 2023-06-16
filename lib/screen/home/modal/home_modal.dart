@@ -25,3 +25,12 @@ class UpdateModal {
     this.image,
   });
 }
+
+class UserModal {
+  String? email, post;
+
+  UserModal({
+    this.email,
+    this.post,
+  });
+}

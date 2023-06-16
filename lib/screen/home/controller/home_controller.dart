@@ -4,6 +4,9 @@ import 'package:get/get.dart';
 import '../modal/home_modal.dart';
 
 class HomeController extends GetxController {
+  RxBool signinEye = true.obs;
+  RxBool signupEye = true.obs;
+
   var selectedICategory = "Other".obs;
   var resetSelectedICategory = "Other".obs;
   RxList<String> iCategoryList = <String>[

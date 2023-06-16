@@ -7,7 +7,27 @@ class FbHelper {
   FbHelper._();
 
   FirebaseAuth firebaseAuth = FirebaseAuth.instance;
+
   FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
+
+  Future<String?> signUp({
+    required email,
+    required password,
+  }) async {
+    String? msg;
+    await firebaseAuth
+        .createUserWithEmailAndPassword(
+          email: email,
+          password: password,
+        )
+        .then(
+          (value) => msg = "account successfully created !",
+        )
+        .catchError(
+          (e) => msg = "account creation failed !",
+        );
+    return msg;
+  }
 
   Future<String?> signIn({
     required email,
@@ -28,6 +48,20 @@ class FbHelper {
     return msg;
   }
 
+  Future<void> insertUser({
+    email,
+    post,
+  }) async {
+    await firebaseFirestore.collection("user").add({
+      "email": email,
+      "post": post,
+    });
+  }
+
+  Stream<QuerySnapshot<Map<String, dynamic>>> readUser() {
+    return firebaseFirestore.collection("user").snapshots();
+  }
+
   bool checkUser() {
     User? user = firebaseAuth.currentUser;
     return user != null;
@@ -35,6 +69,21 @@ class FbHelper {
 
   Future<void> signOut() async {
     await firebaseAuth.signOut();
+  }
+
+  Future<String?> resetPassword({
+    email,
+  }) async {
+    String? msg;
+    await firebaseAuth
+        .sendPasswordResetEmail(email: email)
+        .then(
+          (value) => msg = "password successfully change !",
+        )
+        .catchError(
+          (e) => msg = "password reset failed !",
+        );
+    return msg;
   }
 
   Future<void> insertItem({

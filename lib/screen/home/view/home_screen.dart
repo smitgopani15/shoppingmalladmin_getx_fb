@@ -21,6 +21,12 @@ class _HomeScreenState extends State<HomeScreen> {
   );
 
   @override
+  void initState() {
+    super.initState();
+    homeController.dataList.clear();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
@@ -180,7 +186,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     content: AwesomeSnackbarContent(
                                       title: "Success",
                                       message: "item delete successfully !",
-                                      contentType: ContentType.failure,
+                                      contentType: ContentType.success,
                                     ),
                                   );
                                   ScaffoldMessenger.of(context)

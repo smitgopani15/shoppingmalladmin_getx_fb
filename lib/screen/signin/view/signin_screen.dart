@@ -2,6 +2,7 @@ import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:untitled_getx_fb/screen/home/controller/home_controller.dart';
 import '../../../utils/fb_helper.dart';
 
 class SigninScreen extends StatefulWidget {
@@ -12,40 +13,64 @@ class SigninScreen extends StatefulWidget {
 }
 
 class _SigninScreenState extends State<SigninScreen> {
-  @override
   TextEditingController emailc = TextEditingController();
   TextEditingController passwordc = TextEditingController();
+  TextEditingController resetemailc = TextEditingController();
+  HomeController homeController = Get.put(
+    HomeController(),
+  );
 
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Color(0xfffef2fe),
-      body: Stack(
-        children: [
-          Align(
-            alignment: Alignment.bottomRight,
-            child: Padding(
-              padding: EdgeInsets.all(20),
-              child: Text(
-                "Admin Only !",
-                style: GoogleFonts.secularOne(
-                  fontWeight: FontWeight.w500,
-                  fontSize: 14,
-                  color: Colors.teal,
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Color(0xfffef2fe),
+        body: Padding(
+          padding: EdgeInsets.only(
+            left: 30,
+            right: 30,
+          ),
+          child: Stack(
+            children: [
+              Align(
+                alignment: Alignment.bottomCenter,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Don't have an account ?",
+                      style: GoogleFonts.secularOne(
+                        color: Colors.teal.withOpacity(0.6),
+                        fontWeight: FontWeight.w500,
+                        fontSize: 14,
+                      ),
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        Get.toNamed('signup_screen');
+                      },
+                      child: Text(
+                        'Sign Up',
+                        style: GoogleFonts.secularOne(
+                          color: Colors.teal,
+                          fontWeight: FontWeight.w500,
+                          fontSize: 16,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
-            ),
-          ),
-          Center(
-            child: Padding(
-              padding: EdgeInsets.all(30),
-              child: Column(
+              Column(
                 mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                  Container(
-                    height: 120,
-                    width: 120,
-                    alignment: Alignment.center,
-                    child: Image.asset("assets/images/1.png"),
+                  Center(
+                    child: Container(
+                      height: 120,
+                      width: 120,
+                      alignment: Alignment.center,
+                      child: Image.asset("assets/images/1.png"),
+                    ),
                   ),
                   SizedBox(
                     height: 50,
@@ -54,7 +79,11 @@ class _SigninScreenState extends State<SigninScreen> {
                     height: 65,
                     width: double.infinity,
                     decoration: BoxDecoration(
-                      color: Colors.teal,
+                      border: Border.all(
+                        color: Colors.teal,
+                        width: 3,
+                      ),
+                      color: Color(0xfffef2fe),
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: Padding(
@@ -71,7 +100,7 @@ class _SigninScreenState extends State<SigninScreen> {
                             ),
                             child: Icon(
                               Icons.email,
-                              color: Color(0xfffef2fe),
+                              color: Colors.teal,
                               size: 30,
                             ),
                           ),
@@ -86,7 +115,7 @@ class _SigninScreenState extends State<SigninScreen> {
                             child: Container(
                               height: double.infinity,
                               width: 3,
-                              color: Color(0xfffef2fe),
+                              color: Colors.teal,
                             ),
                           ),
                           SizedBox(
@@ -95,15 +124,15 @@ class _SigninScreenState extends State<SigninScreen> {
                           Expanded(
                             child: TextField(
                               controller: emailc,
-                              cursorColor: Color(0xfffef2fe),
+                              cursorColor: Colors.teal,
                               style: GoogleFonts.secularOne(
-                                color: Color(0xfffef2fe),
+                                color: Colors.teal,
                                 fontWeight: FontWeight.w500,
                               ),
                               decoration: InputDecoration(
                                 hintText: "Email",
                                 hintStyle: GoogleFonts.secularOne(
-                                  color: Color(0xfffef2fe),
+                                  color: Colors.teal.withOpacity(0.6),
                                   fontWeight: FontWeight.w500,
                                 ),
                                 border: InputBorder.none,
@@ -121,13 +150,17 @@ class _SigninScreenState extends State<SigninScreen> {
                     height: 65,
                     width: double.infinity,
                     decoration: BoxDecoration(
-                      color: Colors.teal,
+                      border: Border.all(
+                        color: Colors.teal,
+                        width: 3,
+                      ),
+                      color: Color(0xfffef2fe),
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: Padding(
                       padding: EdgeInsets.only(
                         left: 20,
-                        right: 20,
+                        right: 10,
                       ),
                       child: Row(
                         children: [
@@ -138,7 +171,7 @@ class _SigninScreenState extends State<SigninScreen> {
                             ),
                             child: Icon(
                               Icons.lock,
-                              color: Color(0xfffef2fe),
+                              color: Colors.teal,
                               size: 30,
                             ),
                           ),
@@ -153,32 +186,222 @@ class _SigninScreenState extends State<SigninScreen> {
                             child: Container(
                               height: double.infinity,
                               width: 3,
-                              color: Color(0xfffef2fe),
+                              color: Colors.teal,
                             ),
                           ),
                           SizedBox(
                             width: 15,
                           ),
                           Expanded(
-                            child: TextField(
-                              controller: passwordc,
-                              obscureText: true,
-                              cursorColor: Color(0xfffef2fe),
-                              style: GoogleFonts.secularOne(
-                                color: Color(0xfffef2fe),
-                                fontWeight: FontWeight.w500,
-                              ),
-                              decoration: InputDecoration(
-                                hintText: "Password",
-                                hintStyle: GoogleFonts.secularOne(
-                                  color: Color(0xfffef2fe),
+                            child: Obx(
+                              () => TextField(
+                                controller: passwordc,
+                                obscureText: homeController.signinEye.value,
+                                cursorColor: Colors.teal,
+                                style: GoogleFonts.secularOne(
+                                  color: Colors.teal,
                                   fontWeight: FontWeight.w500,
                                 ),
-                                border: InputBorder.none,
+                                decoration: InputDecoration(
+                                  suffixIcon: IconButton(
+                                    onPressed: () {
+                                      homeController.signinEye.value =
+                                          !homeController.signinEye.value;
+                                    },
+                                    icon: homeController.signinEye.value
+                                        ? Icon(
+                                            Icons.visibility_off,
+                                            color: Colors.teal,
+                                          )
+                                        : Icon(
+                                            Icons.visibility,
+                                            color: Colors.teal,
+                                          ),
+                                  ),
+                                  suffixIconColor: Colors.black,
+                                  hintText: "Password",
+                                  hintStyle: GoogleFonts.secularOne(
+                                    color: Colors.teal.withOpacity(0.6),
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                  border: InputBorder.none,
+                                ),
                               ),
                             ),
                           ),
                         ],
+                      ),
+                    ),
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      showModalBottomSheet(
+                        context: context,
+                        isScrollControlled: true,
+                        backgroundColor: Color(0xfffef2fe),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(40),
+                            topRight: Radius.circular(40),
+                          ),
+                        ),
+                        builder: (context) {
+                          return Padding(
+                            padding: EdgeInsets.all(30),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      "Forgot Password",
+                                      style: GoogleFonts.secularOne(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 24,
+                                        color: Colors.teal,
+                                      ),
+                                    ),
+                                    IconButton(
+                                      onPressed: () {
+                                        Get.back();
+                                      },
+                                      icon: Icon(
+                                        Icons.close,
+                                        color: Colors.teal,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                SizedBox(
+                                  height: 30,
+                                ),
+                                Text(
+                                  "Enter your email and we'll send you a link to reset your password.",
+                                  style: GoogleFonts.secularOne(
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 18,
+                                    color: Colors.teal.withOpacity(0.6),
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: 20,
+                                ),
+                                Container(
+                                  height: 65,
+                                  width: double.infinity,
+                                  decoration: BoxDecoration(
+                                    border: Border.all(
+                                      color: Colors.teal,
+                                      width: 3,
+                                    ),
+                                    color: Color(0xfffef2fe),
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                  child: Padding(
+                                    padding: EdgeInsets.only(
+                                      left: 20,
+                                      right: 20,
+                                    ),
+                                    child: Row(
+                                      children: [
+                                        Padding(
+                                          padding: EdgeInsets.only(
+                                            top: 10,
+                                            bottom: 10,
+                                          ),
+                                          child: Icon(
+                                            Icons.email,
+                                            color: Colors.teal,
+                                            size: 30,
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          width: 15,
+                                        ),
+                                        Padding(
+                                          padding: EdgeInsets.only(
+                                            top: 12,
+                                            bottom: 12,
+                                          ),
+                                          child: Container(
+                                            height: double.infinity,
+                                            width: 3,
+                                            color: Colors.teal,
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          width: 15,
+                                        ),
+                                        Expanded(
+                                          child: TextField(
+                                            controller: resetemailc,
+                                            cursorColor: Colors.teal,
+                                            style: GoogleFonts.secularOne(
+                                              color: Colors.teal,
+                                              fontWeight: FontWeight.w500,
+                                            ),
+                                            decoration: InputDecoration(
+                                              hintText: "Email",
+                                              hintStyle: GoogleFonts.secularOne(
+                                                color: Colors.teal
+                                                    .withOpacity(0.6),
+                                                fontWeight: FontWeight.w500,
+                                              ),
+                                              border: InputBorder.none,
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: 30,
+                                ),
+                                InkWell(
+                                  onTap: () {
+                                    FbHelper.fbHelper.resetPassword(
+                                      email: resetemailc.text,
+                                    );
+                                    Get.back();
+                                  },
+                                  child: Container(
+                                    height: 65,
+                                    width: double.infinity,
+                                    decoration: BoxDecoration(
+                                      color: Colors.teal,
+                                      borderRadius: BorderRadius.circular(10),
+                                    ),
+                                    alignment: Alignment.center,
+                                    child: Padding(
+                                      padding: EdgeInsets.only(
+                                        top: 1,
+                                      ),
+                                      child: Text(
+                                        "Send Email",
+                                        style: GoogleFonts.secularOne(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 20,
+                                          color: Color(0xfffef2fe),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          );
+                        },
+                      );
+                    },
+                    child: Text(
+                      "Forgot Password ?",
+                      style: GoogleFonts.secularOne(
+                        color: Colors.teal,
+                        fontWeight: FontWeight.w500,
+                        fontSize: 16,
                       ),
                     ),
                   ),
@@ -200,6 +423,7 @@ class _SigninScreenState extends State<SigninScreen> {
                         radius: 30,
                         backgroundColor: Colors.teal,
                         child: IconButton(
+                          color: Color(0xfffef2fe),
                           onPressed: () async {
                             String? msg = await FbHelper.fbHelper.signIn(
                               email: emailc.text,
@@ -238,7 +462,6 @@ class _SigninScreenState extends State<SigninScreen> {
                           },
                           icon: Icon(
                             Icons.arrow_forward,
-                            color: Color(0xfffef2fe),
                           ),
                         ),
                       ),
@@ -246,9 +469,9 @@ class _SigninScreenState extends State<SigninScreen> {
                   ),
                 ],
               ),
-            ),
+            ],
           ),
-        ],
+        ),
       ),
     );
   }
