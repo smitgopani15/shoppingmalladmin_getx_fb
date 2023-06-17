@@ -157,6 +157,7 @@ class _InsertScreenState extends State<InsertScreen> {
                                 child: TextField(
                                   controller: namec,
                                   cursorColor: Colors.teal,
+                                  textInputAction: TextInputAction.next,
                                   style: GoogleFonts.secularOne(
                                     color: Colors.teal,
                                     fontWeight: FontWeight.w500,
@@ -243,6 +244,7 @@ class _InsertScreenState extends State<InsertScreen> {
                               Expanded(
                                 child: TextField(
                                   controller: pricec,
+                                  textInputAction: TextInputAction.next,
                                   cursorColor: Colors.teal,
                                   style: GoogleFonts.secularOne(
                                     color: Colors.teal,
@@ -330,6 +332,7 @@ class _InsertScreenState extends State<InsertScreen> {
                               Expanded(
                                 child: TextField(
                                   controller: descriptionc,
+                                  textInputAction: TextInputAction.next,
                                   cursorColor: Colors.teal,
                                   style: GoogleFonts.secularOne(
                                     color: Colors.teal,
@@ -417,6 +420,7 @@ class _InsertScreenState extends State<InsertScreen> {
                               Expanded(
                                 child: TextField(
                                   controller: offerc,
+                                  textInputAction: TextInputAction.next,
                                   cursorColor: Colors.teal,
                                   style: GoogleFonts.secularOne(
                                     color: Colors.teal,

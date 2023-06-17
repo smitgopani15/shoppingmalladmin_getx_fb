@@ -94,6 +94,7 @@ class _SigninScreenState extends State<SigninScreen> {
                       Expanded(
                         child: TextField(
                           controller: emailc,
+                          textInputAction: TextInputAction.next,
                           cursorColor: Colors.teal,
                           style: GoogleFonts.secularOne(
                             color: Colors.teal,
@@ -167,6 +168,7 @@ class _SigninScreenState extends State<SigninScreen> {
                           () => TextField(
                             controller: passwordc,
                             obscureText: homeController.signinEye.value,
+                            textInputAction: TextInputAction.next,
                             cursorColor: Colors.teal,
                             style: GoogleFonts.secularOne(
                               color: Colors.teal,

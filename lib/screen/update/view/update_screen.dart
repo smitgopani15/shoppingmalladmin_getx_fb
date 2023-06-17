@@ -2,7 +2,6 @@
 
 import 'dart:convert';
 import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -178,6 +177,7 @@ class _UpdateScreenState extends State<UpdateScreen> {
                               Expanded(
                                 child: TextField(
                                   controller: namec,
+                                  textInputAction: TextInputAction.next,
                                   cursorColor: Colors.teal,
                                   style: GoogleFonts.secularOne(
                                     color: Colors.teal,
@@ -265,6 +265,7 @@ class _UpdateScreenState extends State<UpdateScreen> {
                               Expanded(
                                 child: TextField(
                                   controller: pricec,
+                                  textInputAction: TextInputAction.next,
                                   cursorColor: Colors.teal,
                                   style: GoogleFonts.secularOne(
                                     color: Colors.teal,
@@ -352,6 +353,7 @@ class _UpdateScreenState extends State<UpdateScreen> {
                               Expanded(
                                 child: TextField(
                                   controller: descriptionc,
+                                  textInputAction: TextInputAction.next,
                                   cursorColor: Colors.teal,
                                   style: GoogleFonts.secularOne(
                                     color: Colors.teal,
@@ -440,6 +442,7 @@ class _UpdateScreenState extends State<UpdateScreen> {
                                 child: TextField(
                                   controller: offerc,
                                   cursorColor: Colors.teal,
+                                  textInputAction: TextInputAction.next,
                                   style: GoogleFonts.secularOne(
                                     color: Colors.teal,
                                     fontWeight: FontWeight.w500,
@@ -724,11 +727,5 @@ class _UpdateScreenState extends State<UpdateScreen> {
         ),
       ),
     );
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties.add(DiagnosticsProperty('name', name));
   }
 }
