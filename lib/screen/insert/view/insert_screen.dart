@@ -27,10 +27,10 @@ class _InsertScreenState extends State<InsertScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Color(0xfffef2fe),
+        backgroundColor: const Color(0xfffef2fe),
         body: Column(
           children: [
-            Container(
+            SizedBox(
               height: 60,
               width: double.infinity,
               child: Row(
@@ -43,7 +43,7 @@ class _InsertScreenState extends State<InsertScreen> {
                       height: 60,
                       width: 60,
                       alignment: Alignment.center,
-                      child: Icon(
+                      child: const Icon(
                         Icons.arrow_back,
                         color: Colors.teal,
                         size: 25,
@@ -51,7 +51,7 @@ class _InsertScreenState extends State<InsertScreen> {
                     ),
                   ),
                   Expanded(
-                    child: Container(
+                    child: SizedBox(
                       height: 60,
                       width: double.infinity,
                       child: Column(
@@ -59,7 +59,7 @@ class _InsertScreenState extends State<InsertScreen> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Padding(
-                            padding: EdgeInsets.only(
+                            padding: const EdgeInsets.only(
                               top: 2,
                             ),
                             child: Text(
@@ -81,7 +81,7 @@ class _InsertScreenState extends State<InsertScreen> {
             ),
             Expanded(
               child: Padding(
-                padding: EdgeInsets.only(
+                padding: const EdgeInsets.only(
                   left: 20,
                   right: 20,
                   bottom: 20,
@@ -92,7 +92,7 @@ class _InsertScreenState extends State<InsertScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Padding(
-                        padding: EdgeInsets.only(
+                        padding: const EdgeInsets.only(
                           left: 2,
                         ),
                         child: Text(
@@ -104,7 +104,7 @@ class _InsertScreenState extends State<InsertScreen> {
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 5,
                       ),
                       Container(
@@ -115,17 +115,17 @@ class _InsertScreenState extends State<InsertScreen> {
                             color: Colors.teal,
                             width: 3,
                           ),
-                          color: Color(0xfffef2fe),
+                          color: const Color(0xfffef2fe),
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: Padding(
-                          padding: EdgeInsets.only(
+                          padding: const EdgeInsets.only(
                             left: 20,
                             right: 20,
                           ),
                           child: Row(
                             children: [
-                              Padding(
+                              const Padding(
                                 padding: EdgeInsets.only(
                                   top: 10,
                                   bottom: 10,
@@ -136,11 +136,11 @@ class _InsertScreenState extends State<InsertScreen> {
                                   size: 30,
                                 ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 15,
                               ),
                               Padding(
-                                padding: EdgeInsets.only(
+                                padding: const EdgeInsets.only(
                                   top: 12,
                                   bottom: 12,
                                 ),
@@ -150,7 +150,7 @@ class _InsertScreenState extends State<InsertScreen> {
                                   color: Colors.teal,
                                 ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 15,
                               ),
                               Expanded(
@@ -175,11 +175,11 @@ class _InsertScreenState extends State<InsertScreen> {
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 20,
                       ),
                       Padding(
-                        padding: EdgeInsets.only(
+                        padding: const EdgeInsets.only(
                           left: 2,
                         ),
                         child: Text(
@@ -191,7 +191,7 @@ class _InsertScreenState extends State<InsertScreen> {
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 5,
                       ),
                       Container(
@@ -202,17 +202,17 @@ class _InsertScreenState extends State<InsertScreen> {
                             color: Colors.teal,
                             width: 3,
                           ),
-                          color: Color(0xfffef2fe),
+                          color: const Color(0xfffef2fe),
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: Padding(
-                          padding: EdgeInsets.only(
+                          padding: const EdgeInsets.only(
                             left: 20,
                             right: 20,
                           ),
                           child: Row(
                             children: [
-                              Padding(
+                              const Padding(
                                 padding: EdgeInsets.only(
                                   top: 10,
                                   bottom: 10,
@@ -223,11 +223,11 @@ class _InsertScreenState extends State<InsertScreen> {
                                   size: 30,
                                 ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 15,
                               ),
                               Padding(
-                                padding: EdgeInsets.only(
+                                padding: const EdgeInsets.only(
                                   top: 12,
                                   bottom: 12,
                                 ),
@@ -237,7 +237,7 @@ class _InsertScreenState extends State<InsertScreen> {
                                   color: Colors.teal,
                                 ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 15,
                               ),
                               Expanded(
@@ -262,11 +262,11 @@ class _InsertScreenState extends State<InsertScreen> {
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 20,
                       ),
                       Padding(
-                        padding: EdgeInsets.only(
+                        padding: const EdgeInsets.only(
                           left: 2,
                         ),
                         child: Text(
@@ -278,7 +278,7 @@ class _InsertScreenState extends State<InsertScreen> {
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 5,
                       ),
                       Container(
@@ -289,17 +289,17 @@ class _InsertScreenState extends State<InsertScreen> {
                             color: Colors.teal,
                             width: 3,
                           ),
-                          color: Color(0xfffef2fe),
+                          color: const Color(0xfffef2fe),
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: Padding(
-                          padding: EdgeInsets.only(
+                          padding: const EdgeInsets.only(
                             left: 20,
                             right: 20,
                           ),
                           child: Row(
                             children: [
-                              Padding(
+                              const Padding(
                                 padding: EdgeInsets.only(
                                   top: 10,
                                   bottom: 10,
@@ -310,11 +310,11 @@ class _InsertScreenState extends State<InsertScreen> {
                                   size: 30,
                                 ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 15,
                               ),
                               Padding(
-                                padding: EdgeInsets.only(
+                                padding: const EdgeInsets.only(
                                   top: 12,
                                   bottom: 12,
                                 ),
@@ -324,7 +324,7 @@ class _InsertScreenState extends State<InsertScreen> {
                                   color: Colors.teal,
                                 ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 15,
                               ),
                               Expanded(
@@ -349,11 +349,11 @@ class _InsertScreenState extends State<InsertScreen> {
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 20,
                       ),
                       Padding(
-                        padding: EdgeInsets.only(
+                        padding: const EdgeInsets.only(
                           left: 2,
                         ),
                         child: Text(
@@ -365,7 +365,7 @@ class _InsertScreenState extends State<InsertScreen> {
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 5,
                       ),
                       Container(
@@ -376,17 +376,17 @@ class _InsertScreenState extends State<InsertScreen> {
                             color: Colors.teal,
                             width: 3,
                           ),
-                          color: Color(0xfffef2fe),
+                          color: const Color(0xfffef2fe),
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: Padding(
-                          padding: EdgeInsets.only(
+                          padding: const EdgeInsets.only(
                             left: 20,
                             right: 20,
                           ),
                           child: Row(
                             children: [
-                              Padding(
+                              const Padding(
                                 padding: EdgeInsets.only(
                                   top: 10,
                                   bottom: 10,
@@ -397,11 +397,11 @@ class _InsertScreenState extends State<InsertScreen> {
                                   size: 30,
                                 ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 15,
                               ),
                               Padding(
-                                padding: EdgeInsets.only(
+                                padding: const EdgeInsets.only(
                                   top: 12,
                                   bottom: 12,
                                 ),
@@ -411,7 +411,7 @@ class _InsertScreenState extends State<InsertScreen> {
                                   color: Colors.teal,
                                 ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 15,
                               ),
                               Expanded(
@@ -436,11 +436,11 @@ class _InsertScreenState extends State<InsertScreen> {
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 20,
                       ),
                       Padding(
-                        padding: EdgeInsets.only(
+                        padding: const EdgeInsets.only(
                           left: 2,
                         ),
                         child: Text(
@@ -452,7 +452,7 @@ class _InsertScreenState extends State<InsertScreen> {
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 5,
                       ),
                       Container(
@@ -463,12 +463,12 @@ class _InsertScreenState extends State<InsertScreen> {
                             color: Colors.teal,
                             width: 3,
                           ),
-                          color: Color(0xfffef2fe),
+                          color: const Color(0xfffef2fe),
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: Row(
                           children: [
-                            Padding(
+                            const Padding(
                               padding: EdgeInsets.only(
                                 left: 20,
                               ),
@@ -484,11 +484,11 @@ class _InsertScreenState extends State<InsertScreen> {
                                 ),
                               ),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               width: 15,
                             ),
                             Padding(
-                              padding: EdgeInsets.only(
+                              padding: const EdgeInsets.only(
                                 top: 12,
                                 bottom: 12,
                               ),
@@ -498,7 +498,7 @@ class _InsertScreenState extends State<InsertScreen> {
                                 color: Colors.teal,
                               ),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               width: 15,
                             ),
                             Expanded(
@@ -507,8 +507,8 @@ class _InsertScreenState extends State<InsertScreen> {
                                 items: homeController.iCategoryList
                                     .map(
                                       (element) => DropdownMenuItem(
-                                        child: Text(element),
                                         value: element,
+                                        child: Text(element),
                                       ),
                                     )
                                     .toList(),
@@ -516,14 +516,14 @@ class _InsertScreenState extends State<InsertScreen> {
                                   homeController.selectedICategory.value =
                                       value!;
                                 },
-                                icon: Icon(
+                                icon: const Icon(
                                   Icons.arrow_drop_down,
                                   color: Colors.teal,
                                 ),
-                                decoration: InputDecoration(
+                                decoration: const InputDecoration(
                                   border: InputBorder.none,
                                 ),
-                                dropdownColor: Color(0xfffef2fe),
+                                dropdownColor: const Color(0xfffef2fe),
                                 style: GoogleFonts.secularOne(
                                   color: Colors.teal,
                                   fontWeight: FontWeight.w500,
@@ -532,17 +532,17 @@ class _InsertScreenState extends State<InsertScreen> {
                                 borderRadius: BorderRadius.circular(10),
                               ),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               width: 20,
                             ),
                           ],
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 20,
                       ),
                       Padding(
-                        padding: EdgeInsets.only(
+                        padding: const EdgeInsets.only(
                           left: 2,
                         ),
                         child: Text(
@@ -554,7 +554,7 @@ class _InsertScreenState extends State<InsertScreen> {
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 5,
                       ),
                       Container(
@@ -565,7 +565,7 @@ class _InsertScreenState extends State<InsertScreen> {
                             color: Colors.teal,
                             width: 3,
                           ),
-                          color: Color(0xfffef2fe),
+                          color: const Color(0xfffef2fe),
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: Column(
@@ -586,7 +586,7 @@ class _InsertScreenState extends State<InsertScreen> {
                                       width: 150,
                                     ),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 25,
                             ),
                             InkWell(
@@ -608,12 +608,12 @@ class _InsertScreenState extends State<InsertScreen> {
                                     color: Colors.teal,
                                     width: 3,
                                   ),
-                                  color: Color(0xfffef2fe),
+                                  color: const Color(0xfffef2fe),
                                   borderRadius: BorderRadius.circular(10),
                                 ),
                                 alignment: Alignment.center,
                                 child: Padding(
-                                  padding: EdgeInsets.only(
+                                  padding: const EdgeInsets.only(
                                     top: 1,
                                   ),
                                   child: Text(
@@ -630,7 +630,7 @@ class _InsertScreenState extends State<InsertScreen> {
                           ],
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 30,
                       ),
                       InkWell(
@@ -671,7 +671,7 @@ class _InsertScreenState extends State<InsertScreen> {
                           ),
                           alignment: Alignment.center,
                           child: Padding(
-                            padding: EdgeInsets.only(
+                            padding: const EdgeInsets.only(
                               top: 1,
                             ),
                             child: Text(
@@ -679,7 +679,7 @@ class _InsertScreenState extends State<InsertScreen> {
                               style: GoogleFonts.secularOne(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 20,
-                                color: Color(0xfffef2fe),
+                                color: const Color(0xfffef2fe),
                               ),
                             ),
                           ),

@@ -30,12 +30,12 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Color(0xfffef2fe),
+        backgroundColor: const Color(0xfffef2fe),
         body: Stack(
           children: [
             Column(
               children: [
-                Container(
+                SizedBox(
                   height: 60,
                   width: double.infinity,
                   child: Row(
@@ -44,14 +44,14 @@ class _HomeScreenState extends State<HomeScreen> {
                         height: 60,
                         width: 60,
                         alignment: Alignment.center,
-                        child: Icon(
+                        child: const Icon(
                           Icons.shopping_bag,
                           color: Colors.teal,
                           size: 40,
                         ),
                       ),
                       Expanded(
-                        child: Container(
+                        child: SizedBox(
                           height: 60,
                           width: double.infinity,
                           child: Column(
@@ -59,7 +59,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Padding(
-                                padding: EdgeInsets.only(
+                                padding: const EdgeInsets.only(
                                   top: 7,
                                 ),
                                 child: Text(
@@ -95,14 +95,14 @@ class _HomeScreenState extends State<HomeScreen> {
                           Get.offAndToNamed('signin_screen');
                         },
                         child: Padding(
-                          padding: EdgeInsets.only(
+                          padding: const EdgeInsets.only(
                             top: 6,
                           ),
                           child: Container(
                             height: 60,
                             width: 60,
                             alignment: Alignment.center,
-                            child: Icon(
+                            child: const Icon(
                               Icons.logout,
                               color: Colors.teal,
                               size: 25,
@@ -144,7 +144,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         return ListView.builder(
                           itemBuilder: (context, index) {
                             return Padding(
-                              padding: EdgeInsets.only(
+                              padding: const EdgeInsets.only(
                                 left: 20,
                                 right: 20,
                                 bottom: 10,
@@ -204,11 +204,11 @@ class _HomeScreenState extends State<HomeScreen> {
                                       color: Colors.teal,
                                       width: 3,
                                     ),
-                                    color: Color(0xfffef2fe),
+                                    color: const Color(0xfffef2fe),
                                     borderRadius: BorderRadius.circular(10),
                                   ),
                                   child: Padding(
-                                    padding: EdgeInsets.only(
+                                    padding: const EdgeInsets.only(
                                       left: 20,
                                       right: 20,
                                       top: 10,
@@ -223,8 +223,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                           child: dataList[index].image == null
                                               ? Image.asset(
                                                   "assets/images/2.png",
-                                                  height: 150,
-                                                  width: 150,
+                                                  height: 100,
+                                                  width: 100,
+                                                  fit: BoxFit.cover,
                                                 )
                                               : Image.memory(
                                                   base64Decode(
@@ -236,11 +237,11 @@ class _HomeScreenState extends State<HomeScreen> {
                                                   width: 150,
                                                 ),
                                         ),
-                                        SizedBox(
+                                        const SizedBox(
                                           width: 15,
                                         ),
                                         Padding(
-                                          padding: EdgeInsets.symmetric(
+                                          padding: const EdgeInsets.symmetric(
                                             vertical: 5,
                                           ),
                                           child: Container(
@@ -249,11 +250,11 @@ class _HomeScreenState extends State<HomeScreen> {
                                             color: Colors.teal,
                                           ),
                                         ),
-                                        SizedBox(
+                                        const SizedBox(
                                           width: 15,
                                         ),
                                         Expanded(
-                                          child: Container(
+                                          child: SizedBox(
                                             height: double.infinity,
                                             width: double.infinity,
                                             child: Column(
@@ -270,7 +271,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                                     fontSize: 20,
                                                   ),
                                                 ),
-                                                SizedBox(
+                                                const SizedBox(
                                                   height: 4,
                                                 ),
                                                 Text(
@@ -281,7 +282,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                                     fontSize: 15,
                                                   ),
                                                 ),
-                                                SizedBox(
+                                                const SizedBox(
                                                   height: 4,
                                                 ),
                                                 Text(
@@ -292,7 +293,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                                     fontSize: 15,
                                                   ),
                                                 ),
-                                                SizedBox(
+                                                const SizedBox(
                                                   height: 4,
                                                 ),
                                                 Text(
@@ -317,7 +318,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           itemCount: dataList.length,
                         );
                       }
-                      return Center(
+                      return const Center(
                         child: CircularProgressIndicator(
                           color: Colors.teal,
                         ),
@@ -330,7 +331,7 @@ class _HomeScreenState extends State<HomeScreen> {
             Align(
               alignment: Alignment.bottomRight,
               child: Padding(
-                padding: EdgeInsets.all(15),
+                padding: const EdgeInsets.all(15),
                 child: SizedBox(
                   height: 60,
                   width: 60,
@@ -338,11 +339,11 @@ class _HomeScreenState extends State<HomeScreen> {
                     onPressed: () {
                       Get.toNamed('insert_screen');
                     },
-                    child: Icon(
+                    backgroundColor: Colors.teal,
+                    child: const Icon(
                       Icons.add,
                       color: Color(0xfffef2fe),
                     ),
-                    backgroundColor: Colors.teal,
                   ),
                 ),
               ),

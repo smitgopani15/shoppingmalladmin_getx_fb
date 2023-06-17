@@ -12,9 +12,9 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-  @override
   bool isLogin = false;
 
+  @override
   void initState() {
     super.initState();
     isLogin = FbHelper.fbHelper.checkUser();
@@ -23,20 +23,20 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     Timer(
-      Duration(seconds: 3),
+      const Duration(seconds: 3),
       () => isLogin == true
           ? Get.offAndToNamed('home_screen')
           : Get.offAndToNamed('signin_screen'),
     );
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Color(0xfffef2fe),
+        backgroundColor: const Color(0xfffef2fe),
         body: Stack(
           children: [
             Align(
               alignment: Alignment.bottomRight,
               child: Padding(
-                padding: EdgeInsets.all(20),
+                padding: const EdgeInsets.all(20),
                 child: Text(
                   "Admin Only !",
                   style: GoogleFonts.secularOne(
@@ -51,7 +51,7 @@ class _SplashScreenState extends State<SplashScreen> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Icon(
+                  const Icon(
                     Icons.shopping_bag,
                     color: Colors.teal,
                     size: 160,
