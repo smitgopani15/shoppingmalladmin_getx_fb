@@ -74,6 +74,7 @@ class FbHelper {
       "offer": offer,
       "category": category,
       "image": image,
+      "cart": false,
     });
   }
 
@@ -110,6 +111,7 @@ class FbHelper {
       "offer": offer,
       "category": category,
       "image": image,
+      "cart": false,
     });
   }
 

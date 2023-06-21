@@ -6,19 +6,19 @@ import '../modal/home_modal.dart';
 class HomeController extends GetxController {
   RxBool signinEye = true.obs;
 
-  var selectedICategory = "Other".obs;
-  var resetSelectedICategory = "Other".obs;
+  var selectedICategory = "other".obs;
+  var resetSelectedICategory = "other".obs;
   RxList<String> iCategoryList = <String>[
-    "Mobiles",
-    "Wearables",
-    "TVs",
-    "Monitors",
-    "Tablets",
-    "Laptops",
-    "Computers",
-    "Printers",
-    "Scanners",
-    "Other",
+    "mobile",
+    "watch",
+    "tv",
+    "monitor",
+    "tablet",
+    "laptop",
+    "computer",
+    "printer",
+    "scanner",
+    "other",
   ].obs;
 
   void resetICategory() {
@@ -27,18 +27,18 @@ class HomeController extends GetxController {
 
   List<UpdateModal> dataList = <UpdateModal>[];
 
-  var selectedUCategory = "Other".obs;
+  var selectedUCategory = "other".obs;
   RxList<String> uCategoryList = <String>[
-    "Mobiles",
-    "Wearables",
-    "TVs",
-    "Monitors",
-    "Tablets",
-    "Laptops",
-    "Computers",
-    "Printers",
-    "Scanners",
-    "Other",
+    "mobile",
+    "watch",
+    "tv",
+    "monitor",
+    "tablet",
+    "laptop",
+    "computer",
+    "printer",
+    "scanner",
+    "other",
   ].obs;
 
   RxString iImagePath = "empty".obs;
