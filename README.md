@@ -9,3 +9,4 @@
 
 
 ![1](https://github.com/smitgopani15/shoppingmalladmin_getx_fb/assets/125651843/8cdbc62e-da5b-4567-a409-2e994b8a798a)
+![2](https://github.com/smitgopani15/shoppingmalladmin_getx_fb/assets/125651843/fb3577b4-3421-4cbc-8e49-1dfe0e365d54)
